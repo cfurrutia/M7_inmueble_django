@@ -1,18 +1,28 @@
 [
-  {
-      "model": "arriendoApp.usuario",
-      "pk": 1,
-      "fields": {
-          "nombre": "Juan Pérez",
-          "email": "juan.perez@example.com"
-      }
-  },
-  {
-      "model": "arriendoApp.usuario",
-      "pk": 2,
-      "fields": {
-          "nombre": "María García",
-          "email": "maria.garcia@example.com"
-      }
-  }
+    {
+        "model": "arriendoApp.usuario",
+        "pk": 1,
+        "fields": {
+            "nombres": "Juan",
+            "apellidos": "Pérez",
+            "rut": "12345678-9",
+            "direccion": "Calle Ejemplo 123",
+            "telefono": "+56912345678",
+            "correo_electronico": "juan.perez@example.com",
+            "tipo_usuario": 1
+        }
+    },
+    {
+        "model": "arriendoApp.usuario",
+        "pk": 2,
+        "fields": {
+            "nombres": "María",
+            "apellidos": "García",
+            "rut": "98765432-1",
+            "direccion": "Avenida Muestra 456",
+            "telefono": "+56987654321",
+            "correo_electronico": "maria.garcia@example.com",
+            "tipo_usuario": 2
+        }
+    }
 ]
