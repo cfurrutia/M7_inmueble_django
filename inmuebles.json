@@ -1,36 +1,138 @@
 [
     {
         "model": "arriendoApp.inmueble",
-        "pk": 1,
+        "pk": 3,
         "fields": {
-            "nombre": "Casa en Arica",
-            "descripcion": "Hermosa casa con vista al mar",
-            "m2_construidos": 120,
-            "m2_totales": 200,
-            "estacionamientos": 2,
-            "habitaciones": 3,
-            "banos": 2,
-            "direccion": "Av. del Mar 123",
-            "comuna": 1,
-            "tipo_inmueble": 1,
-            "precio_mensual": "500000"
+            "nombre": "Cabaña en Pucón",
+            "descripcion": "Acogedora cabaña cerca del lago",
+            "m2_construidos": 70,
+            "m2_totales": 150,
+            "estacionamientos": 1,
+            "habitaciones": 2,
+            "banos": 1,
+            "direccion": "Camino al Volcán 789",
+            "comuna": 5,
+            "tipo_inmueble": 3,
+            "precio_mensual": "300000"
         }
     },
     {
         "model": "arriendoApp.inmueble",
-        "pk": 2,
+        "pk": 4,
         "fields": {
-            "nombre": "Departamento en Antofagasta",
-            "descripcion": "Moderno departamento en el centro",
-            "m2_construidos": 80,
-            "m2_totales": 80,
+            "nombre": "Loft en Santiago Centro",
+            "descripcion": "Moderno loft en pleno centro de la ciudad",
+            "m2_construidos": 50,
+            "m2_totales": 50,
+            "estacionamientos": 0,
+            "habitaciones": 1,
+            "banos": 1,
+            "direccion": "Paseo Ahumada 1010",
+            "comuna": 7,
+            "tipo_inmueble": 1,
+            "precio_mensual": "400000"
+        }
+    },
+    {
+        "model": "arriendoApp.inmueble",
+        "pk": 5,
+        "fields": {
+            "nombre": "Casa en Viña del Mar",
+            "descripcion": "Amplia casa familiar cerca de la playa",
+            "m2_construidos": 180,
+            "m2_totales": 300,
+            "estacionamientos": 2,
+            "habitaciones": 4,
+            "banos": 3,
+            "direccion": "Av. San Martín 2020",
+            "comuna": 9,
+            "tipo_inmueble": 3,
+            "precio_mensual": "700000"
+        }
+    },
+    {
+        "model": "arriendoApp.inmueble",
+        "pk": 6,
+        "fields": {
+            "nombre": "Departamento en Concepción",
+            "descripcion": "Cómodo departamento cerca de universidades",
+            "m2_construidos": 65,
+            "m2_totales": 65,
             "estacionamientos": 1,
             "habitaciones": 2,
             "banos": 1,
-            "direccion": "Calle Principal 456",
-            "comuna": 3,
+            "direccion": "Calle Universidad 303",
+            "comuna": 11,
+            "tipo_inmueble": 3,
+            "precio_mensual": "280000"
+        }
+    },
+    {
+        "model": "arriendoApp.inmueble",
+        "pk": 7,
+        "fields": {
+            "nombre": "Oficina en Las Condes",
+            "descripcion": "Oficina moderna en sector empresarial",
+            "m2_construidos": 40,
+            "m2_totales": 40,
+            "estacionamientos": 1,
+            "habitaciones": 1,
+            "banos": 1,
+            "direccion": "Av. Apoquindo 4040",
+            "comuna": 13,
             "tipo_inmueble": 2,
-            "precio_mensual": "350000"
+            "precio_mensual": "450000"
+        }
+    },
+    {
+        "model": "arriendoApp.inmueble",
+        "pk": 8,
+        "fields": {
+            "nombre": "Casa en Puerto Montt",
+            "descripcion": "Casa con hermosa vista a los volcanes",
+            "m2_construidos": 140,
+            "m2_totales": 250,
+            "estacionamientos": 2,
+            "habitaciones": 3,
+            "banos": 2,
+            "direccion": "Calle de los Lagos 505",
+            "comuna": 15,
+            "tipo_inmueble": 1,
+            "precio_mensual": "450000"
+        }
+    },
+    {
+        "model": "arriendoApp.inmueble",
+        "pk": 9,
+        "fields": {
+            "nombre": "Estudio en Valparaíso",
+            "descripcion": "Acogedor estudio en cerro alegre",
+            "m2_construidos": 35,
+            "m2_totales": 35,
+            "estacionamientos": 0,
+            "habitaciones": 1,
+            "banos": 1,
+            "direccion": "Pasaje Atkinson 66",
+            "comuna": 17,
+            "tipo_inmueble": 1,
+            "precio_mensual": "250000"
+        }
+    },
+    {
+        "model": "arriendoApp.inmueble",
+        "pk": 10,
+        "fields": {
+            "nombre": "Parcela en Olmué",
+            "descripcion": "Parcela con casa y huerto orgánico",
+            "m2_construidos": 90,
+            "m2_totales": 5000,
+            "estacionamientos": 3,
+            "habitaciones": 2,
+            "banos": 1,
+            "direccion": "Camino La Dormida km 5",
+            "comuna": 19,
+            "tipo_inmueble": 2,
+            "precio_mensual": "600000"
         }
     }
 ]
