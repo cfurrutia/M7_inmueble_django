@@ -1,0 +1,36 @@
+[
+    {
+        "model": "arriendoApp.inmueble",
+        "pk": 1,
+        "fields": {
+            "nombre": "Casa en Arica",
+            "descripcion": "Hermosa casa con vista al mar",
+            "m2_construidos": 120,
+            "m2_totales": 200,
+            "estacionamientos": 2,
+            "habitaciones": 3,
+            "banos": 2,
+            "direccion": "Av. del Mar 123",
+            "comuna": 1,
+            "tipo_inmueble": 1,
+            "precio_mensual": "500000"
+        }
+    },
+    {
+        "model": "arriendoApp.inmueble",
+        "pk": 2,
+        "fields": {
+            "nombre": "Departamento en Antofagasta",
+            "descripcion": "Moderno departamento en el centro",
+            "m2_construidos": 80,
+            "m2_totales": 80,
+            "estacionamientos": 1,
+            "habitaciones": 2,
+            "banos": 1,
+            "direccion": "Calle Principal 456",
+            "comuna": 3,
+            "tipo_inmueble": 2,
+            "precio_mensual": "350000"
+        }
+    }
+]

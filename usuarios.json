@@ -1,0 +1,18 @@
+[
+  {
+      "model": "arriendoApp.usuario",
+      "pk": 1,
+      "fields": {
+          "nombre": "Juan Pérez",
+          "email": "juan.perez@example.com"
+      }
+  },
+  {
+      "model": "arriendoApp.usuario",
+      "pk": 2,
+      "fields": {
+          "nombre": "María García",
+          "email": "maria.garcia@example.com"
+      }
+  }
+]

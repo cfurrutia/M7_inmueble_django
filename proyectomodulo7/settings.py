@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'proyectomodulo7.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "registroarriendo",
+        "NAME": "bdarriendo",
         "USER": "postgres",
         "PASSWORD": "Admin1234",
         "HOST": "127.0.0.1",

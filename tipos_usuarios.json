@@ -1,0 +1,4 @@
+[
+    {"model": "arriendoApp.TipoUsuario", "pk": 1, "fields": {"nombre": "ARRENDATARIO", "descripcion": "Usuario que arrienda"}},
+    {"model": "arriendoApp.TipoUsuario", "pk": 2, "fields": {"nombre": "ARRENDADOR", "descripcion": "Usuario que ofrece en arriendo"}}
+]
