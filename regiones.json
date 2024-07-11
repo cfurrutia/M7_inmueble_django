@@ -10,7 +10,7 @@
   "model": "arriendoapp.region",
   "pk": 2,
   "fields": {
-    "nombre": "Tarapacá"
+    "nombre": "TarapacÃ¡"
   }
 },
 {
@@ -38,77 +38,77 @@
   "model": "arriendoapp.region",
   "pk": 6,
   "fields": {
-    "nombre": "Valparaíso"
+    "nombre": "ValparaÃ­so"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 7,
   "fields": {
-    "nombre": "Región del Libertador Gral. Bernardo O’Higgins"
+    "nombre": "RegiÃ³n del Libertador Gral. Bernardo Oâ€™Higgins"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 8,
   "fields": {
-    "nombre": "Región del Maule"
+    "nombre": "RegiÃ³n del Maule"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 9,
   "fields": {
-    "nombre": "Región de Ñuble"
+    "nombre": "RegiÃ³n de Ã‘uble"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 10,
   "fields": {
-    "nombre": "Región del Biobío"
+    "nombre": "RegiÃ³n del BiobÃ­o"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 11,
   "fields": {
-    "nombre": "Región de la Araucanía"
+    "nombre": "RegiÃ³n de la AraucanÃ­a"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 12,
   "fields": {
-    "nombre": "Región de Los Ríos"
+    "nombre": "RegiÃ³n de Los RÃ­os"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 13,
   "fields": {
-    "nombre": "Región de Los Lagos"
+    "nombre": "RegiÃ³n de Los Lagos"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 14,
   "fields": {
-    "nombre": "Región Aisén del Gral. Carlos Ibáñez del Campo"
+    "nombre": "RegiÃ³n AisÃ©n del Gral. Carlos IbÃ¡Ã±ez del Campo"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 15,
   "fields": {
-    "nombre": "Región de Magallanes y de la Antártica Chilena"
+    "nombre": "RegiÃ³n de Magallanes y de la AntÃ¡rtica Chilena"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 16,
   "fields": {
-    "nombre": "Región Metropolitana de Santiago"
+    "nombre": "RegiÃ³n Metropolitana de Santiago"
   }
 }
 ]

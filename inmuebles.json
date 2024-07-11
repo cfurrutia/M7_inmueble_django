@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "nombre": "Casa en Valparaiso",
-    "descripcion": "Amplio, buen lugar para vivir,  con buena locomoción",
+    "descripcion": "Amplio, buen lugar para vivir,  con buena locomociÃ³n",
     "m2_construidos": 78,
     "m2_totales": 78,
     "estacionamientos": 1,
@@ -22,7 +22,7 @@
   "pk": 2,
   "fields": {
     "nombre": "Casa en Providencia",
-    "descripcion": "Cercano a varios lugares  de entretención y servicios",
+    "descripcion": "Cercano a varios lugares  de entretenciÃ³n y servicios",
     "m2_construidos": 80,
     "m2_totales": 100,
     "estacionamientos": 1,

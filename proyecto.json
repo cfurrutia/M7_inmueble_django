@@ -1,286 +1,5 @@
 [
 {
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2024-07-10T18:56:28.461Z",
-    "user": 2,
-    "content_type": 10,
-    "object_id": "1",
-    "object_repr": "Cesar Toro",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2024-07-10T18:57:56.259Z",
-    "user": 2,
-    "content_type": 10,
-    "object_id": "2",
-    "object_repr": "Julieta Venegas",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2024-07-10T18:59:30.836Z",
-    "user": 2,
-    "content_type": 10,
-    "object_id": "3",
-    "object_repr": "Ana Medel",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 4,
-  "fields": {
-    "action_time": "2024-07-10T19:01:38.215Z",
-    "user": 2,
-    "content_type": 10,
-    "object_id": "4",
-    "object_repr": "Javier Uribe",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2024-07-10T19:02:07.872Z",
-    "user": 2,
-    "content_type": 9,
-    "object_id": "1",
-    "object_repr": "CASA",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 6,
-  "fields": {
-    "action_time": "2024-07-10T19:02:32.444Z",
-    "user": 2,
-    "content_type": 9,
-    "object_id": "2",
-    "object_repr": "DEPARTAMENTO",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2024-07-10T19:04:04.959Z",
-    "user": 2,
-    "content_type": 9,
-    "object_id": "3",
-    "object_repr": "PARCELA",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2024-07-10T19:08:11.038Z",
-    "user": 2,
-    "content_type": 11,
-    "object_id": "1",
-    "object_repr": "Departamento en Temuco",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2024-07-10T19:12:57.749Z",
-    "user": 2,
-    "content_type": 11,
-    "object_id": "2",
-    "object_repr": "Casa en Arica",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 10,
-  "fields": {
-    "action_time": "2024-07-10T19:13:35.494Z",
-    "user": 2,
-    "content_type": 12,
-    "object_id": "1",
-    "object_repr": "Solicitud de Cesar Toro para Casa en Arica",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 11,
-  "fields": {
-    "action_time": "2024-07-11T00:57:36.611Z",
-    "user": 2,
-    "content_type": 17,
-    "object_id": "1",
-    "object_repr": "CADA",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 12,
-  "fields": {
-    "action_time": "2024-07-11T00:57:42.062Z",
-    "user": 2,
-    "content_type": 17,
-    "object_id": "2",
-    "object_repr": "DEPARTAMENTO",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 13,
-  "fields": {
-    "action_time": "2024-07-11T00:58:05.798Z",
-    "user": 2,
-    "content_type": 17,
-    "object_id": "3",
-    "object_repr": "PARCELA",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 14,
-  "fields": {
-    "action_time": "2024-07-11T00:59:32.084Z",
-    "user": 2,
-    "content_type": 15,
-    "object_id": "1",
-    "object_repr": "Cesar Fuentes",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 15,
-  "fields": {
-    "action_time": "2024-07-11T01:00:42.071Z",
-    "user": 2,
-    "content_type": 15,
-    "object_id": "2",
-    "object_repr": "Felipe Parada",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 16,
-  "fields": {
-    "action_time": "2024-07-11T01:01:47.598Z",
-    "user": 2,
-    "content_type": 15,
-    "object_id": "3",
-    "object_repr": "Cristina Reyes",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 17,
-  "fields": {
-    "action_time": "2024-07-11T01:02:54.463Z",
-    "user": 2,
-    "content_type": 15,
-    "object_id": "4",
-    "object_repr": "Pedro Donoso",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 18,
-  "fields": {
-    "action_time": "2024-07-11T01:05:44.353Z",
-    "user": 2,
-    "content_type": 17,
-    "object_id": "1",
-    "object_repr": "CASA",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Nombre\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 19,
-  "fields": {
-    "action_time": "2024-07-11T01:06:33.009Z",
-    "user": 2,
-    "content_type": 18,
-    "object_id": "1",
-    "object_repr": "Casa en Valparaiso",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 20,
-  "fields": {
-    "action_time": "2024-07-11T01:09:05.644Z",
-    "user": 2,
-    "content_type": 18,
-    "object_id": "2",
-    "object_repr": "Casa en Providencia",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 21,
-  "fields": {
-    "action_time": "2024-07-11T01:09:53.688Z",
-    "user": 2,
-    "content_type": 14,
-    "object_id": "1",
-    "object_repr": "Solicitud de Felipe Parada para Casa en Providencia",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "iwomzaujp65u35gvfhl6yethrj62fbhn",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2hACDBSX7j0DYQZGqgaS0q6Md9cmXej2v_f-S8S0rTVuoyxxzuIstDj9bpjoUdoO8j21W5fU27rMKHdFHnTIa8_leTncv4OaRv3WRhsVEDgAcEFPHhFUDp4dac-WrGVG9inwZF3AEpg0KGAmMJPzSbw_9fI4jw:1sRcSn:DTfLNljQFbMxLLCpJ9_ZfGM1OqjcaVoCIMrNim7vPpo",
-    "expire_date": "2024-07-24T18:54:49.699Z"
-  }
-},
-{
   "model": "arriendoapp.region",
   "pk": 1,
   "fields": {
@@ -291,7 +10,7 @@
   "model": "arriendoapp.region",
   "pk": 2,
   "fields": {
-    "nombre": "Tarapac·"
+    "nombre": "Tarapac√°"
   }
 },
 {
@@ -319,77 +38,77 @@
   "model": "arriendoapp.region",
   "pk": 6,
   "fields": {
-    "nombre": "ValparaÌso"
+    "nombre": "Valpara√≠so"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 7,
   "fields": {
-    "nombre": "RegiÛn del Libertador Gral. Bernardo OíHiggins"
+    "nombre": "Regi√≥n del Libertador Gral. Bernardo O‚ÄôHiggins"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 8,
   "fields": {
-    "nombre": "RegiÛn del Maule"
+    "nombre": "Regi√≥n del Maule"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 9,
   "fields": {
-    "nombre": "RegiÛn de —uble"
+    "nombre": "Regi√≥n de √ëuble"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 10,
   "fields": {
-    "nombre": "RegiÛn del BiobÌo"
+    "nombre": "Regi√≥n del Biob√≠o"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 11,
   "fields": {
-    "nombre": "RegiÛn de la AraucanÌa"
+    "nombre": "Regi√≥n de la Araucan√≠a"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 12,
   "fields": {
-    "nombre": "RegiÛn de Los RÌos"
+    "nombre": "Regi√≥n de Los R√≠os"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 13,
   "fields": {
-    "nombre": "RegiÛn de Los Lagos"
+    "nombre": "Regi√≥n de Los Lagos"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 14,
   "fields": {
-    "nombre": "RegiÛn AisÈn del Gral. Carlos Ib·Òez del Campo"
+    "nombre": "Regi√≥n Ais√©n del Gral. Carlos Ib√°√±ez del Campo"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 15,
   "fields": {
-    "nombre": "RegiÛn de Magallanes y de la Ant·rtica Chilena"
+    "nombre": "Regi√≥n de Magallanes y de la Ant√°rtica Chilena"
   }
 },
 {
   "model": "arriendoapp.region",
   "pk": 16,
   "fields": {
-    "nombre": "RegiÛn Metropolitana de Santiago"
+    "nombre": "Regi√≥n Metropolitana de Santiago"
   }
 },
 {
@@ -452,7 +171,7 @@
   "model": "arriendoapp.comuna",
   "pk": 8,
   "fields": {
-    "nombre": "CamiÒa",
+    "nombre": "Cami√±a",
     "region": 2
   }
 },
@@ -524,7 +243,7 @@
   "model": "arriendoapp.comuna",
   "pk": 17,
   "fields": {
-    "nombre": "Ollag¸e",
+    "nombre": "Ollag√ºe",
     "region": 3
   }
 },
@@ -548,7 +267,7 @@
   "model": "arriendoapp.comuna",
   "pk": 20,
   "fields": {
-    "nombre": "MarÌa Elena",
+    "nombre": "Mar√≠a Elena",
     "region": 3
   }
 },
@@ -556,7 +275,7 @@
   "model": "arriendoapp.comuna",
   "pk": 21,
   "fields": {
-    "nombre": "CopiapÛ",
+    "nombre": "Copiap√≥",
     "region": 4
   }
 },
@@ -580,7 +299,7 @@
   "model": "arriendoapp.comuna",
   "pk": 24,
   "fields": {
-    "nombre": "ChaÒaral",
+    "nombre": "Cha√±aral",
     "region": 4
   }
 },
@@ -668,7 +387,7 @@
   "model": "arriendoapp.comuna",
   "pk": 35,
   "fields": {
-    "nombre": "VicuÒa",
+    "nombre": "Vicu√±a",
     "region": 5
   }
 },
@@ -716,7 +435,7 @@
   "model": "arriendoapp.comuna",
   "pk": 41,
   "fields": {
-    "nombre": "Combarbal·",
+    "nombre": "Combarbal√°",
     "region": 5
   }
 },
@@ -740,7 +459,7 @@
   "model": "arriendoapp.comuna",
   "pk": 44,
   "fields": {
-    "nombre": "RÌo Hurtado",
+    "nombre": "R√≠o Hurtado",
     "region": 5
   }
 },
@@ -748,7 +467,7 @@
   "model": "arriendoapp.comuna",
   "pk": 45,
   "fields": {
-    "nombre": "ValparaÌso",
+    "nombre": "Valpara√≠so",
     "region": 6
   }
 },
@@ -764,7 +483,7 @@
   "model": "arriendoapp.comuna",
   "pk": 47,
   "fields": {
-    "nombre": "ConcÛn",
+    "nombre": "Conc√≥n",
     "region": 6
   }
 },
@@ -772,7 +491,7 @@
   "model": "arriendoapp.comuna",
   "pk": 48,
   "fields": {
-    "nombre": "Juan Fern·ndez",
+    "nombre": "Juan Fern√°ndez",
     "region": 6
   }
 },
@@ -780,7 +499,7 @@
   "model": "arriendoapp.comuna",
   "pk": 49,
   "fields": {
-    "nombre": "PuchuncavÌ",
+    "nombre": "Puchuncav√≠",
     "region": 6
   }
 },
@@ -796,7 +515,7 @@
   "model": "arriendoapp.comuna",
   "pk": 51,
   "fields": {
-    "nombre": "ViÒa del Mar",
+    "nombre": "Vi√±a del Mar",
     "region": 6
   }
 },
@@ -1012,7 +731,7 @@
   "model": "arriendoapp.comuna",
   "pk": 78,
   "fields": {
-    "nombre": "Santa MarÌa",
+    "nombre": "Santa Mar√≠a",
     "region": 6
   }
 },
@@ -1020,7 +739,7 @@
   "model": "arriendoapp.comuna",
   "pk": 79,
   "fields": {
-    "nombre": "QuilpuÈ",
+    "nombre": "Quilpu√©",
     "region": 6
   }
 },
@@ -1036,7 +755,7 @@
   "model": "arriendoapp.comuna",
   "pk": 81,
   "fields": {
-    "nombre": "OlmuÈ",
+    "nombre": "Olmu√©",
     "region": 6
   }
 },
@@ -1084,7 +803,7 @@
   "model": "arriendoapp.comuna",
   "pk": 87,
   "fields": {
-    "nombre": "DoÒihue",
+    "nombre": "Do√±ihue",
     "region": 7
   }
 },
@@ -1108,7 +827,7 @@
   "model": "arriendoapp.comuna",
   "pk": 90,
   "fields": {
-    "nombre": "MachalÌ",
+    "nombre": "Machal√≠",
     "region": 7
   }
 },
@@ -1172,7 +891,7 @@
   "model": "arriendoapp.comuna",
   "pk": 98,
   "fields": {
-    "nombre": "RequÌnoa",
+    "nombre": "Requ√≠noa",
     "region": 7
   }
 },
@@ -1244,7 +963,7 @@
   "model": "arriendoapp.comuna",
   "pk": 107,
   "fields": {
-    "nombre": "ChÈpica",
+    "nombre": "Ch√©pica",
     "region": 7
   }
 },
@@ -1324,7 +1043,7 @@
   "model": "arriendoapp.comuna",
   "pk": 117,
   "fields": {
-    "nombre": "ConstituciÛn",
+    "nombre": "Constituci√≥n",
     "region": 8
   }
 },
@@ -1372,7 +1091,7 @@
   "model": "arriendoapp.comuna",
   "pk": 123,
   "fields": {
-    "nombre": "RÌo Claro",
+    "nombre": "R√≠o Claro",
     "region": 8
   }
 },
@@ -1420,7 +1139,7 @@
   "model": "arriendoapp.comuna",
   "pk": 129,
   "fields": {
-    "nombre": "CuricÛ",
+    "nombre": "Curic√≥",
     "region": 8
   }
 },
@@ -1428,7 +1147,7 @@
   "model": "arriendoapp.comuna",
   "pk": 130,
   "fields": {
-    "nombre": "HualaÒÈ",
+    "nombre": "Huala√±√©",
     "region": 8
   }
 },
@@ -1436,7 +1155,7 @@
   "model": "arriendoapp.comuna",
   "pk": 131,
   "fields": {
-    "nombre": "LicantÈn",
+    "nombre": "Licant√©n",
     "region": 8
   }
 },
@@ -1484,7 +1203,7 @@
   "model": "arriendoapp.comuna",
   "pk": 137,
   "fields": {
-    "nombre": "VichuquÈn",
+    "nombre": "Vichuqu√©n",
     "region": 8
   }
 },
@@ -1500,7 +1219,7 @@
   "model": "arriendoapp.comuna",
   "pk": 139,
   "fields": {
-    "nombre": "Colb˙n",
+    "nombre": "Colb√∫n",
     "region": 8
   }
 },
@@ -1508,7 +1227,7 @@
   "model": "arriendoapp.comuna",
   "pk": 140,
   "fields": {
-    "nombre": "LongavÌ",
+    "nombre": "Longav√≠",
     "region": 8
   }
 },
@@ -1596,7 +1315,7 @@
   "model": "arriendoapp.comuna",
   "pk": 151,
   "fields": {
-    "nombre": "R·nquil",
+    "nombre": "R√°nquil",
     "region": 9
   }
 },
@@ -1620,7 +1339,7 @@
   "model": "arriendoapp.comuna",
   "pk": 154,
   "fields": {
-    "nombre": "Chill·n Viejo",
+    "nombre": "Chill√°n Viejo",
     "region": 9
   }
 },
@@ -1628,7 +1347,7 @@
   "model": "arriendoapp.comuna",
   "pk": 155,
   "fields": {
-    "nombre": "Chill·n",
+    "nombre": "Chill√°n",
     "region": 9
   }
 },
@@ -1660,7 +1379,7 @@
   "model": "arriendoapp.comuna",
   "pk": 159,
   "fields": {
-    "nombre": "QuillÛn",
+    "nombre": "Quill√≥n",
     "region": 9
   }
 },
@@ -1692,7 +1411,7 @@
   "model": "arriendoapp.comuna",
   "pk": 163,
   "fields": {
-    "nombre": "—iquÈn",
+    "nombre": "√ëiqu√©n",
     "region": 9
   }
 },
@@ -1708,7 +1427,7 @@
   "model": "arriendoapp.comuna",
   "pk": 165,
   "fields": {
-    "nombre": "San Fabi·n",
+    "nombre": "San Fabi√°n",
     "region": 9
   }
 },
@@ -1716,7 +1435,7 @@
   "model": "arriendoapp.comuna",
   "pk": 166,
   "fields": {
-    "nombre": "San Nicol·s",
+    "nombre": "San Nicol√°s",
     "region": 9
   }
 },
@@ -1724,7 +1443,7 @@
   "model": "arriendoapp.comuna",
   "pk": 167,
   "fields": {
-    "nombre": "ConcepciÛn",
+    "nombre": "Concepci√≥n",
     "region": 10
   }
 },
@@ -1804,7 +1523,7 @@
   "model": "arriendoapp.comuna",
   "pk": 177,
   "fields": {
-    "nombre": "TomÈ",
+    "nombre": "Tom√©",
     "region": 10
   }
 },
@@ -1812,7 +1531,7 @@
   "model": "arriendoapp.comuna",
   "pk": 178,
   "fields": {
-    "nombre": "HualpÈn",
+    "nombre": "Hualp√©n",
     "region": 10
   }
 },
@@ -1836,7 +1555,7 @@
   "model": "arriendoapp.comuna",
   "pk": 181,
   "fields": {
-    "nombre": "CaÒete",
+    "nombre": "Ca√±ete",
     "region": 10
   }
 },
@@ -1860,7 +1579,7 @@
   "model": "arriendoapp.comuna",
   "pk": 184,
   "fields": {
-    "nombre": "Los ¡lamos",
+    "nombre": "Los √Ålamos",
     "region": 10
   }
 },
@@ -1868,7 +1587,7 @@
   "model": "arriendoapp.comuna",
   "pk": 185,
   "fields": {
-    "nombre": "Tir˙a",
+    "nombre": "Tir√∫a",
     "region": 10
   }
 },
@@ -1876,7 +1595,7 @@
   "model": "arriendoapp.comuna",
   "pk": 186,
   "fields": {
-    "nombre": "Los ¡ngeles",
+    "nombre": "Los √Ångeles",
     "region": 10
   }
 },
@@ -1908,7 +1627,7 @@
   "model": "arriendoapp.comuna",
   "pk": 190,
   "fields": {
-    "nombre": "MulchÈn",
+    "nombre": "Mulch√©n",
     "region": 10
   }
 },
@@ -1956,7 +1675,7 @@
   "model": "arriendoapp.comuna",
   "pk": 196,
   "fields": {
-    "nombre": "Santa B·rbara",
+    "nombre": "Santa B√°rbara",
     "region": 10
   }
 },
@@ -1980,7 +1699,7 @@
   "model": "arriendoapp.comuna",
   "pk": 199,
   "fields": {
-    "nombre": "Alto BiobÌo",
+    "nombre": "Alto Biob√≠o",
     "region": 10
   }
 },
@@ -2092,7 +1811,7 @@
   "model": "arriendoapp.comuna",
   "pk": 213,
   "fields": {
-    "nombre": "PitrufquÈn",
+    "nombre": "Pitrufqu√©n",
     "region": 11
   }
 },
@@ -2100,7 +1819,7 @@
   "model": "arriendoapp.comuna",
   "pk": 214,
   "fields": {
-    "nombre": "PucÛn",
+    "nombre": "Puc√≥n",
     "region": 11
   }
 },
@@ -2124,7 +1843,7 @@
   "model": "arriendoapp.comuna",
   "pk": 217,
   "fields": {
-    "nombre": "ToltÈn",
+    "nombre": "Tolt√©n",
     "region": 11
   }
 },
@@ -2132,7 +1851,7 @@
   "model": "arriendoapp.comuna",
   "pk": 218,
   "fields": {
-    "nombre": "Vilc˙n",
+    "nombre": "Vilc√∫n",
     "region": 11
   }
 },
@@ -2172,7 +1891,7 @@
   "model": "arriendoapp.comuna",
   "pk": 223,
   "fields": {
-    "nombre": "CuracautÌn",
+    "nombre": "Curacaut√≠n",
     "region": 11
   }
 },
@@ -2212,7 +1931,7 @@
   "model": "arriendoapp.comuna",
   "pk": 228,
   "fields": {
-    "nombre": "PurÈn",
+    "nombre": "Pur√©n",
     "region": 11
   }
 },
@@ -2228,7 +1947,7 @@
   "model": "arriendoapp.comuna",
   "pk": 230,
   "fields": {
-    "nombre": "TraiguÈn",
+    "nombre": "Traigu√©n",
     "region": 11
   }
 },
@@ -2276,7 +1995,7 @@
   "model": "arriendoapp.comuna",
   "pk": 236,
   "fields": {
-    "nombre": "M·fil",
+    "nombre": "M√°fil",
     "region": 12
   }
 },
@@ -2308,7 +2027,7 @@
   "model": "arriendoapp.comuna",
   "pk": 240,
   "fields": {
-    "nombre": "La UniÛn",
+    "nombre": "La Uni√≥n",
     "region": 12
   }
 },
@@ -2332,7 +2051,7 @@
   "model": "arriendoapp.comuna",
   "pk": 243,
   "fields": {
-    "nombre": "RÌo Bueno",
+    "nombre": "R√≠o Bueno",
     "region": 12
   }
 },
@@ -2356,7 +2075,7 @@
   "model": "arriendoapp.comuna",
   "pk": 246,
   "fields": {
-    "nombre": "CochamÛ",
+    "nombre": "Cocham√≥",
     "region": 13
   }
 },
@@ -2396,7 +2115,7 @@
   "model": "arriendoapp.comuna",
   "pk": 251,
   "fields": {
-    "nombre": "MaullÌn",
+    "nombre": "Maull√≠n",
     "region": 13
   }
 },
@@ -2436,7 +2155,7 @@
   "model": "arriendoapp.comuna",
   "pk": 256,
   "fields": {
-    "nombre": "Curaco de VÈlez",
+    "nombre": "Curaco de V√©lez",
     "region": 13
   }
 },
@@ -2452,7 +2171,7 @@
   "model": "arriendoapp.comuna",
   "pk": 258,
   "fields": {
-    "nombre": "PuqueldÛn",
+    "nombre": "Puqueld√≥n",
     "region": 13
   }
 },
@@ -2460,7 +2179,7 @@
   "model": "arriendoapp.comuna",
   "pk": 259,
   "fields": {
-    "nombre": "QueilÈn",
+    "nombre": "Queil√©n",
     "region": 13
   }
 },
@@ -2468,7 +2187,7 @@
   "model": "arriendoapp.comuna",
   "pk": 260,
   "fields": {
-    "nombre": "QuellÛn",
+    "nombre": "Quell√≥n",
     "region": 13
   }
 },
@@ -2524,7 +2243,7 @@
   "model": "arriendoapp.comuna",
   "pk": 267,
   "fields": {
-    "nombre": "RÌo Negro",
+    "nombre": "R√≠o Negro",
     "region": 13
   }
 },
@@ -2548,7 +2267,7 @@
   "model": "arriendoapp.comuna",
   "pk": 270,
   "fields": {
-    "nombre": "ChaitÈn",
+    "nombre": "Chait√©n",
     "region": 13
   }
 },
@@ -2556,7 +2275,7 @@
   "model": "arriendoapp.comuna",
   "pk": 271,
   "fields": {
-    "nombre": "Futaleuf˙",
+    "nombre": "Futaleuf√∫",
     "region": 13
   }
 },
@@ -2564,7 +2283,7 @@
   "model": "arriendoapp.comuna",
   "pk": 272,
   "fields": {
-    "nombre": "HualaihuÈ",
+    "nombre": "Hualaihu√©",
     "region": 13
   }
 },
@@ -2596,7 +2315,7 @@
   "model": "arriendoapp.comuna",
   "pk": 276,
   "fields": {
-    "nombre": "AisÈn",
+    "nombre": "Ais√©n",
     "region": 14
   }
 },
@@ -2628,7 +2347,7 @@
   "model": "arriendoapp.comuna",
   "pk": 280,
   "fields": {
-    "nombre": "OíHiggins",
+    "nombre": "O‚ÄôHiggins",
     "region": 14
   }
 },
@@ -2652,7 +2371,7 @@
   "model": "arriendoapp.comuna",
   "pk": 283,
   "fields": {
-    "nombre": "RÌo Ib·Òez",
+    "nombre": "R√≠o Ib√°√±ez",
     "region": 14
   }
 },
@@ -2676,7 +2395,7 @@
   "model": "arriendoapp.comuna",
   "pk": 286,
   "fields": {
-    "nombre": "RÌo Verde",
+    "nombre": "R√≠o Verde",
     "region": 15
   }
 },
@@ -2700,7 +2419,7 @@
   "model": "arriendoapp.comuna",
   "pk": 289,
   "fields": {
-    "nombre": "Ant·rtica",
+    "nombre": "Ant√°rtica",
     "region": 15
   }
 },
@@ -2764,7 +2483,7 @@
   "model": "arriendoapp.comuna",
   "pk": 297,
   "fields": {
-    "nombre": "ConchalÌ",
+    "nombre": "Conchal√≠",
     "region": 16
   }
 },
@@ -2780,7 +2499,7 @@
   "model": "arriendoapp.comuna",
   "pk": 299,
   "fields": {
-    "nombre": "EstaciÛn Central",
+    "nombre": "Estaci√≥n Central",
     "region": 16
   }
 },
@@ -2884,7 +2603,7 @@
   "model": "arriendoapp.comuna",
   "pk": 312,
   "fields": {
-    "nombre": "Maip˙",
+    "nombre": "Maip√∫",
     "region": 16
   }
 },
@@ -2892,7 +2611,7 @@
   "model": "arriendoapp.comuna",
   "pk": 313,
   "fields": {
-    "nombre": "—uÒoa",
+    "nombre": "√ëu√±oa",
     "region": 16
   }
 },
@@ -2908,7 +2627,7 @@
   "model": "arriendoapp.comuna",
   "pk": 315,
   "fields": {
-    "nombre": "PeÒalolÈn",
+    "nombre": "Pe√±alol√©n",
     "region": 16
   }
 },
@@ -2972,7 +2691,7 @@
   "model": "arriendoapp.comuna",
   "pk": 323,
   "fields": {
-    "nombre": "San JoaquÌn",
+    "nombre": "San Joaqu√≠n",
     "region": 16
   }
 },
@@ -2988,7 +2707,7 @@
   "model": "arriendoapp.comuna",
   "pk": 325,
   "fields": {
-    "nombre": "San RamÛn",
+    "nombre": "San Ram√≥n",
     "region": 16
   }
 },
@@ -3020,7 +2739,7 @@
   "model": "arriendoapp.comuna",
   "pk": 329,
   "fields": {
-    "nombre": "San JosÈ de Maipo",
+    "nombre": "San Jos√© de Maipo",
     "region": 16
   }
 },
@@ -3092,7 +2811,7 @@
   "model": "arriendoapp.comuna",
   "pk": 338,
   "fields": {
-    "nombre": "AlhuÈ",
+    "nombre": "Alhu√©",
     "region": 16
   }
 },
@@ -3100,7 +2819,7 @@
   "model": "arriendoapp.comuna",
   "pk": 339,
   "fields": {
-    "nombre": "CuracavÌ",
+    "nombre": "Curacav√≠",
     "region": 16
   }
 },
@@ -3108,7 +2827,7 @@
   "model": "arriendoapp.comuna",
   "pk": 340,
   "fields": {
-    "nombre": "MarÌa Pinto",
+    "nombre": "Mar√≠a Pinto",
     "region": 16
   }
 },
@@ -3156,7 +2875,7 @@
   "model": "arriendoapp.comuna",
   "pk": 346,
   "fields": {
-    "nombre": "PeÒaflor",
+    "nombre": "Pe√±aflor",
     "region": 16
   }
 },
@@ -3238,7 +2957,7 @@
   "pk": 1,
   "fields": {
     "nombre": "Casa en Valparaiso",
-    "descripcion": "Amplio, buen lugar para vivir,  con buena locomociÛn",
+    "descripcion": "Amplio, buen lugar para vivir,  con buena locomoci√≥n",
     "m2_construidos": 78,
     "m2_totales": 78,
     "estacionamientos": 1,
@@ -3256,7 +2975,7 @@
   "pk": 2,
   "fields": {
     "nombre": "Casa en Providencia",
-    "descripcion": "Cercano a varios lugares  de entretenciÛn y servicios",
+    "descripcion": "Cercano a varios lugares  de entretenci√≥n y servicios",
     "m2_construidos": 80,
     "m2_totales": 100,
     "estacionamientos": 1,
