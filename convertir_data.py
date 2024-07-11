@@ -76,7 +76,7 @@ comuna_pk = 1
 
 for region in data['regiones']:
     fixtures.append({
-        "model": "arriendoApp.region",
+        "model": "arriendoapp.region",
         "pk": region_pk,
         "fields": {
             "nombre": region['region']
@@ -85,7 +85,7 @@ for region in data['regiones']:
     
     for comuna in region['comunas']:
         fixtures.append({
-            "model": "arriendoApp.comuna",
+            "model": "arriendoapp.comuna",
             "pk": comuna_pk,
             "fields": {
                 "nombre": comuna,

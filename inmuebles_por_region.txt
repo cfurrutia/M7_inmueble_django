@@ -1,0 +1,5 @@
+
+Región: Región Metropolitana de Santiago
+ID: 2 - Nombre: Casa en Providencia - Comuna: Providencia
+Descripción: Cercano a varios lugares  de entretención y servicios
+

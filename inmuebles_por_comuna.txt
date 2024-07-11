@@ -1,0 +1,4 @@
+ID: 1 - Nombre: Casa en Valparaiso - Comuna: Valparaíso
+Descripción: Amplio, buen lugar para vivir,  con buena locomoción
+Región: Valparaíso
+
