@@ -19,7 +19,7 @@ def listar_por_comuna(nombre_comuna):
         cursor.execute(select, [f'%{nombre_comuna}%'])
         results = cursor.fetchall()
 
-    with open("inmuebles_por_comuna.txt", "w", encoding="utf-8") as archivo:
+    with open("consultas/inmuebles_por_comuna.txt", "w", encoding="utf-8") as archivo:
         for row in results:
             archivo.write(f"ID: {row[0]} - Nombre: {row[1]} - Comuna: {row[3]}\n")
             archivo.write(f"Descripción: {row[2]}\n")
@@ -37,7 +37,7 @@ def listar_por_region(nombre_region):
         cursor.execute(select, [f'%{nombre_region}%'])
         results = cursor.fetchall()
 
-    with open("inmuebles_por_region.txt", "w", encoding="utf-8") as archivo:
+    with open("consultas/inmuebles_por_region.txt", "w", encoding="utf-8") as archivo:
         current_region = ''
         for row in results:
             if row[4] != current_region:
