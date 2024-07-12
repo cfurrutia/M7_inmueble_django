@@ -2883,73 +2883,77 @@
   "model": "arriendoapp.tipoinmueble",
   "pk": 1,
   "fields": {
-    "nombre": "CASA"
+    "nombre": "Casa"
   }
 },
 {
   "model": "arriendoapp.tipoinmueble",
   "pk": 2,
   "fields": {
-    "nombre": "DEPARTAMENTO"
+    "nombre": "Departamento"
   }
 },
 {
   "model": "arriendoapp.tipoinmueble",
   "pk": 3,
   "fields": {
-    "nombre": "PARCELA"
+    "nombre": "Parcela"
   }
 },
 {
   "model": "arriendoapp.usuario",
   "pk": 1,
   "fields": {
-    "nombres": "Cesar",
-    "apellidos": "Fuentes",
-    "rut": "16567765-4",
-    "direccion": "Calle de arica 2323",
-    "telefono": "+56934768999",
-    "correo": "cfuentes@a.cl",
-    "tipo_usuario": "ARRENDATARIO"
+    "user": 2,
+    "nombres": "Juana",
+    "apellidos": "Carmona",
+    "rut": "9234564-5",
+    "direccion": "Calle principal 123",
+    "telefono": "+56923455576",
+    "correo": "jcarmona@a.cl",
+    "tipo_usuario": "ARRENDADOR"
   }
 },
 {
   "model": "arriendoapp.usuario",
   "pk": 2,
   "fields": {
-    "nombres": "Felipe",
-    "apellidos": "Parada",
-    "rut": "16576345-2",
-    "direccion": "Avenida de Valaparaiso 1212",
-    "telefono": "+56923232345",
-    "correo": "fparada@b.cl",
-    "tipo_usuario": "ARRENDATARIO"
+    "user": 3,
+    "nombres": "Cesar",
+    "apellidos": "Fuentes",
+    "rut": "15678888-1",
+    "direccion": "Avenida de providencia 222",
+    "telefono": "+56923441919",
+    "correo": "cfuentes@a.cl",
+    "tipo_usuario": "ARRENDADOR"
   }
 },
 {
   "model": "arriendoapp.usuario",
   "pk": 3,
   "fields": {
-    "nombres": "Cristina",
-    "apellidos": "Reyes",
-    "rut": "17456776-k",
-    "direccion": "calle central 345",
-    "telefono": "+56934657877",
-    "correo": "creyres@correo.cl",
-    "tipo_usuario": "ARRENDADOR"
+    "user": 4,
+    "nombres": "Luis",
+    "apellidos": "Ruminot",
+    "rut": "20345234-k",
+    "direccion": "Calle de Santiago 23",
+    "telefono": "+56956182934",
+    "correo": "lrumi@b.cl",
+    "tipo_usuario": "ARRENDATARIO"
   }
 },
 {
   "model": "arriendoapp.usuario",
   "pk": 4,
   "fields": {
-    "nombres": "Pedro",
-    "apellidos": "Donoso",
-    "rut": "15456675-2",
-    "direccion": "Pasaje nortino  444",
-    "telefono": "+56945658888",
-    "correo": "pdonoso@correo.com",
-    "tipo_usuario": "ARRENDADOR"
+    "user": 5,
+    "nombres": "Juan",
+    "apellidos": "Parada",
+    "rut": "15676232-2",
+    "direccion": "Pasaje 3 de Temuco 345",
+    "telefono": "+56945723223",
+    "correo": "jparada@correo.cl",
+    "tipo_usuario": "ARRENDATARIO"
   }
 },
 {
@@ -2986,16 +2990,6 @@
     "tipo_inmueble": 1,
     "precio_arriendo": 510000,
     "arrendador": 3
-  }
-},
-{
-  "model": "arriendoapp.solicitudarriendo",
-  "pk": 1,
-  "fields": {
-    "arrendatario": 2,
-    "inmueble": 2,
-    "fecha_solicitud": "2024-07-11T01:09:53.685Z",
-    "estado": "Pendiente"
   }
 }
 ]

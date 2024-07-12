@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Region(models.Model):
     nombre = models.CharField(null= False, blank=False, max_length=100)
@@ -24,17 +25,18 @@ class Usuario(models.Model):
         ('ARRENDATARIO', 'Arrendatario'),
         ('ARRENDADOR', 'Arrendador'),
     ]
-    nombres = models.CharField(null= False, blank=False, max_length=100)
-    apellidos = models.CharField(null= False, blank=False, max_length=100)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    nombres = models.CharField(null=False, blank=False, max_length=100)
+    apellidos = models.CharField(null=False, blank=False, max_length=100)
     rut = models.CharField(max_length=20, unique=True)
-    direccion = models.CharField(null= False, blank=False, max_length=200)
-    telefono = models.CharField(null= False, blank=False, max_length=20)
-    correo = models.EmailField(null= False, blank=False, unique=True)
-    tipo_usuario = models.CharField(null= False, blank=False, max_length=20, choices=TIPOS_USUARIO)
+    direccion = models.CharField(null=False, blank=False, max_length=200)
+    telefono = models.CharField(null=False, blank=False, max_length=20)
+    correo = models.EmailField(null=False, blank=False, unique=True)
+    tipo_usuario = models.CharField(null=False, blank=False, max_length=20, choices=TIPOS_USUARIO)
 
     def __str__(self):
         return f"{self.nombres} {self.apellidos}"
-
+    
 class Inmueble(models.Model):
     nombre = models.CharField(null= False, blank=False, max_length=100)
     descripcion = models.TextField(null= False, blank=False)

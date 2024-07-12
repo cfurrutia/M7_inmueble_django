@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<h1>Listado de Inmuebles</h1>
+<ul>
+{% for inmueble in inmuebles %}
+    <li><a href="{% url 'detalle_inmueble' inmueble.id %}">{{ inmueble.nombre }}</a> - {{ inmueble.comuna.nombre }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

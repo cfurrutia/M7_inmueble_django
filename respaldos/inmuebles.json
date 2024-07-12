@@ -14,7 +14,7 @@
     "comuna": 45,
     "tipo_inmueble": 1,
     "precio_arriendo": 410000,
-    "arrendador": 1
+    "arrendador": 4
   }
 },
 {
@@ -32,7 +32,7 @@
     "comuna": 316,
     "tipo_inmueble": 1,
     "precio_arriendo": 510000,
-    "arrendador": 2
+    "arrendador": 3
   }
 }
 ]

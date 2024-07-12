@@ -29,12 +29,12 @@
   "model": "arriendoapp.usuario",
   "pk": 3,
   "fields": {
-    "nombres": "Leonel",
-    "apellidos": "Messias",
+    "nombres": "Luis",
+    "apellidos": "Ruminot",
     "rut": "20345234-k",
     "direccion": "Calle de Santiago 23",
     "telefono": "+56956182934",
-    "correo": "lmesi@b.cl",
+    "correo": "lrumi@b.cl",
     "tipo_usuario": "ARRENDATARIO"
   }
 },
