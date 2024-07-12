@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
-from .forms import InmuebleForm, UsuarioForm
+from django.contrib.auth.decorators import login_required
+from .forms import InmuebleForm, UsuarioForm, UsuarioEditForm
 from .models import Usuario, Inmueble, Comuna, Region
 
 
@@ -32,9 +33,24 @@ def inmuebles_por_region(request, region_id):
     inmuebles = Inmueble.objects.filter(comuna__region=region)
     return render(request, 'inmuebles_por_region.html', {'region': region, 'inmuebles': inmuebles})
 
+@login_required
+def perfil_usuario(request):
+    return render(request, 'perfil.html', {'usuario': request.user.usuario})
+
+@login_required
+def editar_perfil(request):
+    usuario = request.user.usuario
+    if request.method == 'POST':
+        form = UsuarioEditForm(request.POST, instance=usuario)
+        if form.is_valid():
+            form.save()
+            return redirect('perfil_usuario')
+    else:
+        form = UsuarioEditForm(instance=usuario)
+    return render(request, 'editar_perfil.html', {'form': form})
+
 def crear_usuario(request):
     if request.method == 'POST':
-        
         form = UsuarioForm(request.POST)
         if form.is_valid():
             user = User.objects.create_user(
@@ -52,9 +68,8 @@ def crear_usuario(request):
                 correo=form.cleaned_data['correo'],
                 tipo_usuario=form.cleaned_data['tipo_usuario']
             )
-            
             return redirect('alguna_url')
     else:
         form = UsuarioForm()
-    
+
     return render(request, 'crear_usuario.html', {'form': form})

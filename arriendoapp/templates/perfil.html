@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil</title>
-  </head>
-  <body>
-    <h2>Perfil de {{ usuario.username }}</h2>
-    <p>Nombre: {{ usuario.nombres }} {{ usuario.apellidos }}</p>
-    <p>RUT: {{ usuario.rut }}</p>
-    <p>Dirección: {{ usuario.direccion }}</p>
-    <p>Teléfono: {{ usuario.telefono }}</p>
-    <p>Email: {{ usuario.correo }}</p>
-    <p>Tipo de usuario: {{ tipo_usuario }}</p>
-    <a href="{% url 'editar_perfil' %}">Editar perfil</a>
-  </body>
-</html>
+
+{% extends 'base.html' %}
+
+{% block 'content' %}
+  <h2>Perfil de {{ usuario.nombres }} {{ usuario.apellidos }}</h2>
+  <p><strong>RUT:</strong> {{ usuario.rut }}</p>
+  <p><strong>Dirección:</strong> {{ usuario.direccion }}</p>
+  <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+  <p><strong>Correo:</strong> {{ usuario.correo }}</p>
+  <p><strong>Tipo de usuario:</strong> {{ usuario.get_tipo_usuario_display }}</p>
+  <a href="{% url 'editar_perfil' %}">Editar perfil</a>
+{% endblock %}

@@ -8,4 +8,6 @@ urlpatterns = [
     path('<int:inmueble_id>/', views.detalle_inmueble, name='detalle_inmueble'),
     path('comuna/<int:comuna_id>/', views.inmuebles_por_comuna, name='inmuebles_por_comuna'),
     path('region/<int:region_id>/', views.inmuebles_por_region, name='inmuebles_por_region'),
+    path('perfil/', views.perfil_usuario, name='perfil'),
+    path('perfil/editar/', views.editar_perfil, name='editar_perfil'),
 ]
