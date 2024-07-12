@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
-  </head>
-  <body>
-    <h2>Login</h2>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Iniciar sesión</button>
-    </form>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<h1>Iniciar sesión</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+</form>
+<p>¿No tienes una cuenta? <a href="{% url 'crear_usuario' %}">Regístrate aquí</a></p>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<h1>Inmuebles en {{ comuna.nombre }}</h1>
+<div class="inmuebles-grid">
+    {% for inmueble in inmuebles %}
+    <div class="inmueble-card">
+        <h2>{{ inmueble.nombre }}</h2>
+        <p>{{ inmueble.descripcion|truncatewords:20 }}</p>
+        <p>Precio: ${{ inmueble.precio_arriendo }}</p>
+        <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-primary">Ver detalles</a>
+    </div>
+    {% empty %}
+    <p>No hay inmuebles disponibles en esta comuna.</p>
+    {% endfor %}
+</div>
+{% endblock %}
