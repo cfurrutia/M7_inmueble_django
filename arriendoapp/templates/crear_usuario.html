@@ -2,7 +2,7 @@
 
 {% block 'content' %}
 <h1>Registro de usuario</h1>
-<form method="post">
+<form action="{% url 'crear_usuario' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Registrarse</button>

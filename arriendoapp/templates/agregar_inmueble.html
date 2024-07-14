@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<h2>Agregar Inmueble</h2>
+<form method="post" name="crear_inmueble">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Agregar Inmueble</button>
+</form>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

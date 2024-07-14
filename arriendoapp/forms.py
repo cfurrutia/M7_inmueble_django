@@ -1,31 +1,58 @@
 from django import forms
-from .models import Inmueble, Usuario
+from .models import Inmueble, Usuario, Region, Comuna
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 class InmuebleForm(forms.ModelForm):
+    region = forms.ModelChoiceField(queryset=Region.objects.all(), empty_label="Seleccione una región")
+    comuna = forms.ModelChoiceField(queryset=Comuna.objects.none(), empty_label="Seleccione una comuna")
+
     class Meta:
         model = Inmueble
-        fields = ['nombre', 'descripcion', 'm2_construidos', 'm2_totales', 'estacionamientos', 'habitaciones', 'banos', 'direccion', 'comuna', 'tipo_inmueble', 'precio_arriendo', 'arrendador']
-    
-class UsuarioForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
-    password_confirm = forms.CharField(widget=forms.PasswordInput())
+        fields = ['nombre', 'descripcion', 'm2_construidos', 'm2_totales', 'estacionamientos', 'habitaciones', 'banos', 'direccion', 'region', 'comuna', 'tipo_inmueble', 'precio_arriendo']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['comuna'].queryset = Comuna.objects.none()
+
+        if 'region' in self.data:
+            try:
+                region_id = int(self.data.get('region'))
+                self.fields['comuna'].queryset = Comuna.objects.filter(region_id=region_id).order_by('nombre')
+            except (ValueError, TypeError):
+                pass
+        elif self.instance.pk and self.instance.region:
+            self.fields['comuna'].queryset = self.instance.region.comuna_set.order_by('nombre')
+            
+class CrearUsuarioForm(UserCreationForm):
+    email = forms.EmailField(required=True)
 
     class Meta:
-        model = Usuario
-        fields = ['nombres', 'apellidos', 'rut', 'direccion', 'telefono', 'correo', 'tipo_usuario']
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
 
-    def clean(self):
-        cleaned_data = super().clean()
-        password = cleaned_data.get("password")
-        password_confirm = cleaned_data.get("password_confirm")
-
-        if password and password_confirm and password != password_confirm:
-            raise forms.ValidationError("Las contraseñas no coinciden.")
-
-        return cleaned_data
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+            Usuario.objects.create(user=user)
+        return user
 
 class UsuarioEditForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = ['nombres', 'apellidos', 'rut', 'direccion', 'telefono', 'correo', 'tipo_usuario']
+        fields = ['nombres', 'apellidos', 'rut', 'direccion', 'telefono']
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.instance.user:
+            self.fields['email'].initial = self.instance.user.email
+
+    def save(self, commit=True):
+        usuario = super().save(commit=False)
+        if commit:
+            usuario.save()
+            usuario.user.email = self.cleaned_data['email']
+            usuario.user.save()
+        return usuario
+    

@@ -21,22 +21,23 @@ class TipoInmueble(models.Model):
         return self.nombre
 
 class Usuario(models.Model):
-    TIPOS_USUARIO = [
-        ('ARRENDATARIO', 'Arrendatario'),
-        ('ARRENDADOR', 'Arrendador'),
+    TIPO_USUARIO_CHOICES = [
+        ('arrendatario', 'Arrendatario'),
+        ('arrendador', 'Arrendador'),
+        ('ambos', 'Ambos')
     ]
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    nombres = models.CharField(null=False, blank=False, max_length=100)
-    apellidos = models.CharField(null=False, blank=False, max_length=100)
-    rut = models.CharField(max_length=20, unique=True)
-    direccion = models.CharField(null=False, blank=False, max_length=200)
-    telefono = models.CharField(null=False, blank=False, max_length=20)
-    correo = models.EmailField(null=False, blank=False, unique=True)
-    tipo_usuario = models.CharField(null=False, blank=False, max_length=20, choices=TIPOS_USUARIO)
+    nombres = models.CharField(max_length=100, blank=True)
+    apellidos = models.CharField(max_length=100, blank=True)
+    rut = models.CharField(max_length=20, blank=True)
+    direccion = models.CharField(max_length=200, blank=True)
+    telefono = models.CharField(max_length=20, blank=True)
+    tipo_usuario = models.CharField(max_length=20, choices=TIPO_USUARIO_CHOICES, default='arrendatario')
 
     def __str__(self):
-        return f"{self.nombres} {self.apellidos}"
-    
+        return self.user.username
+        
 class Inmueble(models.Model):
     nombre = models.CharField(null= False, blank=False, max_length=100)
     descripcion = models.TextField(null= False, blank=False)
@@ -46,6 +47,7 @@ class Inmueble(models.Model):
     habitaciones = models.IntegerField(null= False, blank=False)
     banos = models.IntegerField(null= False, blank=False)
     direccion = models.CharField(max_length=200)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
     comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE)
     tipo_inmueble = models.ForeignKey(TipoInmueble, on_delete=models.CASCADE)
     precio_arriendo = models.IntegerField(null= False, blank=False)

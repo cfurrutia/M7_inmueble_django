@@ -2,12 +2,13 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    
+    #path('', views.home, name='home'),
     path('', views.lista_inmuebles, name='lista_inmuebles'),
-    path('crear/', views.crear_inmueble, name='crear_inmueble'),
+    path('inmueble/<int:inmueble_id>/', views.detalle_inmueble, name='detalle_inmueble'),
     path('crear_usuario/', views.crear_usuario, name='crear_usuario'),
-    path('<int:inmueble_id>/', views.detalle_inmueble, name='detalle_inmueble'),
-    path('comuna/<int:comuna_id>/', views.inmuebles_por_comuna, name='inmuebles_por_comuna'),
-    path('region/<int:region_id>/', views.inmuebles_por_region, name='inmuebles_por_region'),
-    path('perfil/', views.perfil_usuario, name='perfil'),
-    path('perfil/editar/', views.editar_perfil, name='editar_perfil'),
+    path('editar_perfil/', views.editar_perfil, name='editar_perfil'),
+    path('agregar_inmueble/', views.agregar_inmueble, name='agregar_inmueble'),
+    path('obtener_comunas/', views.obtener_comunas, name='obtener_comunas'),
+    path('solicitar_arriendo/<int:inmueble_id>/', views.solicitar_arriendo, name='solicitar_arriendo'),
 ]

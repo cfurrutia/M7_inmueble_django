@@ -2,10 +2,11 @@
 
 {% block 'content' %}
 <h1>Iniciar sesión</h1>
-<form method="post">
+<form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    <button type="submit">Iniciar sesión</button>
 </form>
-<p>¿No tienes una cuenta? <a href="{% url 'crear_usuario' %}">Regístrate aquí</a></p>
+<p>¿No tienes una cuenta? <a href="{% url 'crear_usuario' %}">Crear usuario</a></p>
 {% endblock %}
+

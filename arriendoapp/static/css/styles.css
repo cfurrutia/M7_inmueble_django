@@ -1,0 +1,21 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+body {
+    font-family: "Raleway", sans-serif;    
+}
+
+.nav-link:hover {
+    color: #363fbec0 !important;
+    
+}
+
+.form-control {
+    border: 2px solid orange;
+    border-radius: 5px; 
+    padding: 5px; 
+}
+

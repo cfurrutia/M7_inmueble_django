@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav>
-      <a href="{% url 'lista_inmuebles' %}">Inicio</a>
+      <a href="{% url 'lista_inmuebles' %}">Inicio</a> 
       {% if user.is_authenticated %}
         <span>Hola, {{ user.username }}</span>
         <a href="{% url 'logout' %}">Cerrar sesión</a>

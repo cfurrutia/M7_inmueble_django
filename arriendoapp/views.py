@@ -1,41 +1,34 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import InmuebleForm, UsuarioForm, UsuarioEditForm
-from .models import Usuario, Inmueble, Comuna, Region
+from .forms import InmuebleForm, CrearUsuarioForm, UsuarioEditForm
+from .models import Inmueble, Comuna
+from django.contrib import messages
+from django.http import JsonResponse
 
-
-def crear_inmueble(request):
-    if request.method == 'POST':
-        form = InmuebleForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('lista_inmuebles')
-    else:
-        form = InmuebleForm()
-    return render(request, 'crear_inmueble.html', {'form': form})
+def obtener_comunas(request):
+    region_id = request.GET.get('region_id')
+    comunas = Comuna.objects.filter(region_id=region_id).order_by('nombre')
+    return JsonResponse(list(comunas.values('id', 'nombre')), safe=False)
 
 def lista_inmuebles(request):
     inmuebles = Inmueble.objects.all()
     return render(request, 'lista_inmuebles.html', {'inmuebles': inmuebles})
 
 def detalle_inmueble(request, inmueble_id):
-    inmueble = get_object_or_404(Inmueble, pk=inmueble_id)
+    inmueble = get_object_or_404(Inmueble, id=inmueble_id)
     return render(request, 'detalle_inmueble.html', {'inmueble': inmueble})
 
-def inmuebles_por_comuna(request, comuna_id):
-    comuna = get_object_or_404(Comuna, pk=comuna_id)
-    inmuebles = Inmueble.objects.filter(comuna=comuna)
-    return render(request, 'inmuebles_por_comuna.html', {'comuna': comuna, 'inmuebles': inmuebles})
-
-def inmuebles_por_region(request, region_id):
-    region = get_object_or_404(Region, pk=region_id)
-    inmuebles = Inmueble.objects.filter(comuna__region=region)
-    return render(request, 'inmuebles_por_region.html', {'region': region, 'inmuebles': inmuebles})
-
-@login_required
-def perfil_usuario(request):
-    return render(request, 'perfil.html', {'usuario': request.user.usuario})
+def crear_usuario(request):
+    if request.method == 'POST':
+        form = CrearUsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Usuario creado exitosamente. Por favor, inicia sesión.')
+            return redirect('login')
+    else:
+        form = CrearUsuarioForm()
+    return render(request, 'crear_usuario.html', {'form': form})
 
 @login_required
 def editar_perfil(request):
@@ -44,32 +37,39 @@ def editar_perfil(request):
         form = UsuarioEditForm(request.POST, instance=usuario)
         if form.is_valid():
             form.save()
-            return redirect('perfil_usuario')
+            messages.success(request, 'Perfil actualizado exitosamente.')
+            return redirect('perfil')
     else:
         form = UsuarioEditForm(instance=usuario)
     return render(request, 'editar_perfil.html', {'form': form})
 
-def crear_usuario(request):
+@login_required
+def agregar_inmueble(request):
     if request.method == 'POST':
-        form = UsuarioForm(request.POST)
+        form = InmuebleForm(request.POST)
         if form.is_valid():
-            user = User.objects.create_user(
-                username=form.cleaned_data['correo'],
-                email=form.cleaned_data['correo'],
-                password=form.cleaned_data['password']
-            )
-            usuario = Usuario.objects.create(
-                user=user,
-                nombres=form.cleaned_data['nombres'],
-                apellidos=form.cleaned_data['apellidos'],
-                rut=form.cleaned_data['rut'],
-                direccion=form.cleaned_data['direccion'],
-                telefono=form.cleaned_data['telefono'],
-                correo=form.cleaned_data['correo'],
-                tipo_usuario=form.cleaned_data['tipo_usuario']
-            )
-            return redirect('alguna_url')
+            inmueble = form.save(commit=False)
+            inmueble.arrendador = request.user.usuario
+            inmueble.save()
+            usuario = request.user.usuario
+            if usuario.tipo_usuario == 'arrendatario':
+                usuario.tipo_usuario = 'arrendador'
+            elif usuario.tipo_usuario == 'arrendatario':
+                usuario.tipo_usuario = 'ambos'
+            usuario.save()
+            messages.success(request, 'Inmueble agregado exitosamente.')
+            return redirect('perfil')
     else:
-        form = UsuarioForm()
+        form = InmuebleForm()
+    return render(request, 'agregar_inmueble.html', {'form': form})
 
-    return render(request, 'crear_usuario.html', {'form': form})
+@login_required
+def solicitar_arriendo(request, inmueble_id):
+    inmueble = get_object_or_404(Inmueble, id=inmueble_id)
+
+    usuario = request.user.usuario
+    if usuario.tipo_usuario == 'arrendador':
+        usuario.tipo_usuario = 'ambos'
+        usuario.save()
+    messages.success(request, 'Solicitud de arriendo enviada.')
+    return redirect('detalle_inmueble', inmueble_id=inmueble_id)
