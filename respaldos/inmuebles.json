@@ -11,6 +11,7 @@
     "habitaciones": 3,
     "banos": 2,
     "direccion": "Pasaje  2 de valparaiso 12",
+    "region": 6,
     "comuna": 45,
     "tipo_inmueble": 1,
     "precio_arriendo": 410000,
@@ -29,10 +30,30 @@
     "habitaciones": 4,
     "banos": 2,
     "direccion": "Calle de providencia",
+    "region": 16,
     "comuna": 316,
     "tipo_inmueble": 1,
     "precio_arriendo": 510000,
     "arrendador": 3
+  }
+},
+{
+  "model": "arriendoapp.inmueble",
+  "pk": 3,
+  "fields": {
+    "nombre": "Parcela   en la Serena",
+    "descripcion": "Amplia parcela cerca de la carretera con acceso a servicio de luz y agua potable con 3 habitaciones y dos baños",
+    "m2_construidos": 140,
+    "m2_totales": 5000,
+    "estacionamientos": 4,
+    "habitaciones": 3,
+    "banos": 2,
+    "direccion": "Parcela lote numero 2",
+    "region": 5,
+    "comuna": 30,
+    "tipo_inmueble": 3,
+    "precio_arriendo": 700000,
+    "arrendador": 8
   }
 }
 ]

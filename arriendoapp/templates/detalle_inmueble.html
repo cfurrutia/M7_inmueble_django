@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<h1>{{ inmueble.nombre }}</h1>
-<div class="inmueble-detalle">
+<h1 class="text-center form-title">{{ inmueble.nombre }}</h1>
+<div class="inmueble-detalle content-container">
     <p><strong>Descripción:</strong> {{ inmueble.descripcion }}</p>
     <p><strong>Precio:</strong> ${{ inmueble.precio_arriendo }}</p>
     <p><strong>Metros cuadrados construidos:</strong> {{ inmueble.m2_construidos }}</p>
