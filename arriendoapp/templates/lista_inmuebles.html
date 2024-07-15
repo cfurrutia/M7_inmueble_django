@@ -10,7 +10,7 @@
             <p>{{ inmueble.descripcion|truncatewords:20 }}</p>
             <p>Precio: ${{ inmueble.precio_arriendo }}</p>
             <p>Comuna: {{ inmueble.comuna }}</p>
-            <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-primary">Ver detalles</a>
+            <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-success">Ver detalles</a>
         </div>
         {% empty %}
         <p>No hay inmuebles disponibles.</p>

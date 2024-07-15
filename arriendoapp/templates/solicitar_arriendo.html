@@ -5,7 +5,7 @@
 <form method="post">
     {% csrf_token %}
     <p>¿Estás seguro de que deseas solicitar el arriendo de este inmueble?</p>
-    <button type="submit" class="btn btn-primary">Confirmar solicitud</button>
-    <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-success">Confirmar solicitud</button>
+    <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-success">Cancelar</a>
 </form>
 {% endblock %}

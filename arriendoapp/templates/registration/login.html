@@ -6,7 +6,7 @@
     <form method="post" action="{% url 'login' %}" class="auth-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+        <button type="submit" class="btn btn-success btn-block">Iniciar sesión</button>
     </form>
     <p class="auth-link">¿No tienes una cuenta? <a href="{% url 'crear_usuario' %}">Crear usuario</a></p>
 </div>

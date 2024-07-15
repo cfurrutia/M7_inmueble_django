@@ -6,7 +6,7 @@
     <form action="{% url 'crear_usuario' %}" method="post" class="auth-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+        <button type="submit" class="btn btn-success btn-block">Registrarse</button>
     </form>
 </div>
 {% endblock %}
