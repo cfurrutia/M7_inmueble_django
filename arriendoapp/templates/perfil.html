@@ -1,8 +1,8 @@
-
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<h1>Bienvenido, {{ user.username }}</h1>
-<a href="{% url 'editar_perfil' %}">Editar perfil</a>
-<a href="{% url 'agregar_inmueble' %}">Agregar inmueble</a>
+<h1 class="text-center form-title">Bienvenido, {{ user.username }}</h1>
+<a href="{% url 'editar_perfil' %}" class="h1-perfil">Editar perfil</a>
+<hr>
+<a href="{% url 'agregar_inmueble' %}" class="h1-perfil">Agregar inmueble</a>
 {% endblock %}

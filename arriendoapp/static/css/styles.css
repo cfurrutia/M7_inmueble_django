@@ -33,6 +33,12 @@ body {
     margin-bottom: 20px;
 }
 
+.h1-perfil {
+    font-size: 2em;
+    font-weight: bold;
+
+}
+
 .inmuebles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
