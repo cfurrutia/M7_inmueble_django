@@ -40,9 +40,12 @@ class CrearUsuarioForm(UserCreationForm):
         return user
 
 class UsuarioEditForm(forms.ModelForm):
+    email = forms.EmailField(required=True)
+
     class Meta:
         model = Usuario
-        fields = ['nombres', 'apellidos', 'rut', 'direccion', 'telefono']
+        fields = ['nombres', 'apellidos', 'rut', 'direccion', 'telefono', 'tipo_usuario', 'email']
+        
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self.instance.user:
@@ -55,4 +58,3 @@ class UsuarioEditForm(forms.ModelForm):
             usuario.user.email = self.cleaned_data['email']
             usuario.user.save()
         return usuario
-    

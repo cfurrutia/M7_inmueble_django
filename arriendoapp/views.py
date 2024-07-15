@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 from .forms import InmuebleForm, CrearUsuarioForm, UsuarioEditForm
 from .models import Inmueble, Comuna
-from django.contrib import messages
 from django.http import JsonResponse
 
 def obtener_comunas(request):
@@ -29,6 +30,20 @@ def crear_usuario(request):
     else:
         form = CrearUsuarioForm()
     return render(request, 'crear_usuario.html', {'form': form})
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('lista_inmuebles')
+        else:
+            # Handle invalid login
+            return render(request, 'login.html', {'error': 'Invalid username or password'})
+    else:
+        return render(request, 'logout.html')
 
 @login_required
 def editar_perfil(request):

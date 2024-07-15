@@ -5,17 +5,127 @@
 }
 
 body {
-    font-family: "Raleway", sans-serif;    
+    font-family: "Raleway", sans-serif;
+    opacity: 0.95;
+    background: url("/static/fondo.jpg") 99% 0 repeat fixed;
 }
 
-.nav-link:hover {
-    color: #363fbec0 !important;
-    
+.navbar .nav-link {
+    color: rgb(146, 167, 144);
+    transition: color 0.3s ease;
 }
+
+.navbar .nav-link:hover {
+    color: black;
+}
+
+.navbar button.nav-link {
+    color: rgb(180, 169, 169);
+    transition: color 0.3s ease;
+}
+
+.content-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inmuebles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.inmueble-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.inmueble-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inmueble-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.inmueble-card p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.inmueble-card .btn {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .inmuebles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.auth-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+.auth-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form p {
+    margin-bottom: 15px;
+}
+
+.auth-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth-form button {
+    margin-top: 10px;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
 
 .form-control {
-    border: 2px solid orange;
-    border-radius: 5px; 
-    padding: 5px; 
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 5px;
 }
-

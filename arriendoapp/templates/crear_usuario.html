@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<h1>Registro de usuario</h1>
-<form action="{% url 'crear_usuario' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Registrarse</button>
-</form>
+<div class="auth-container">
+    <h1 class="auth-title">Registro de usuario</h1>
+    <form action="{% url 'crear_usuario' %}" method="post" class="auth-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+    </form>
+</div>
 {% endblock %}
