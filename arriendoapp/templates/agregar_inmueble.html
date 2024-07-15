@@ -2,10 +2,12 @@
 {% load static %}
 
 {% block 'content' %}
-<h2>Agregar Inmueble</h2>
-<form method="post" name="crear_inmueble">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Agregar Inmueble</button>
-</form>
+<div class="form-container">
+    <h1 class="form-title">Agregar Inmueble</h1>
+    <form method="post" class="custom-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Agregar Inmueble</button>
+    </form>
+</div>
 {% endblock %}

@@ -40,10 +40,14 @@ def login_view(request):
             login(request, user)
             return redirect('lista_inmuebles')
         else:
-            # Handle invalid login
+            
             return render(request, 'login.html', {'error': 'Invalid username or password'})
     else:
         return render(request, 'logout.html')
+
+@login_required
+def perfil(request):
+    return render(request, 'perfil.html')
 
 @login_required
 def editar_perfil(request):

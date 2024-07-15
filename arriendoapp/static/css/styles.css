@@ -129,3 +129,54 @@ body {
     border-radius: 5px;
     padding: 5px;
 }
+
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.custom-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-form p {
+    margin-bottom: 15px;
+}
+
+.custom-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.custom-form input[type="text"],
+.custom-form input[type="password"],
+.custom-form input[type="email"],
+.custom-form input[type="number"],
+.custom-form textarea,
+.custom-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.custom-form button {
+    margin-top: 10px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
