@@ -1,12 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# Modelo para la región
 class Region(models.Model):
     nombre = models.CharField(null= False, blank=False, max_length=100)
 
     def __str__(self):
         return self.nombre
 
+# Modelo para la comuna
 class Comuna(models.Model):
     nombre = models.CharField(null= False, blank=False, max_length=100)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
@@ -14,13 +16,16 @@ class Comuna(models.Model):
     def __str__(self):
         return self.nombre
 
+# Modelo para el tipo de inmueble
 class TipoInmueble(models.Model):
     nombre = models.CharField(null= False,  blank=False, max_length=50)
 
     def __str__(self):
         return self.nombre
 
+# Modelo para el usuario
 class Usuario(models.Model):
+    # Tipos de usuario
     TIPO_USUARIO_CHOICES = [
         ('arrendatario', 'Arrendatario'),
         ('arrendador', 'Arrendador'),
@@ -38,6 +43,7 @@ class Usuario(models.Model):
     def __str__(self):
         return self.user.username
         
+# Modelo para el inmueble        
 class Inmueble(models.Model):
     nombre = models.CharField(null= False, blank=False, max_length=100)
     descripcion = models.TextField(null= False, blank=False)
@@ -56,6 +62,7 @@ class Inmueble(models.Model):
     def __str__(self):
         return self.nombre
 
+# Modelo para la solicitud de arriendo
 class SolicitudArriendo(models.Model):
     arrendatario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     inmueble = models.ForeignKey(Inmueble, on_delete=models.CASCADE)
