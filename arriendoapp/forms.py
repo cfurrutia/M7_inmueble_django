@@ -14,19 +14,17 @@ class InmuebleForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Inicializa el campo de comuna con un conjunto vacío
         self.fields['comuna'].queryset = Comuna.objects.none()
-        # Si se ha seleccionado una región, filtra las comunas pertenecientes a esa región
+        
         if 'region' in self.data:
             try:
                 region_id = int(self.data.get('region'))
                 self.fields['comuna'].queryset = Comuna.objects.filter(region_id=region_id).order_by('nombre')
             except (ValueError, TypeError):
                 pass
-        # Si se ha guardado un inmueble, muestra las comunas de la región correspondiente
         elif self.instance.pk and self.instance.region:
             self.fields['comuna'].queryset = self.instance.region.comuna_set.order_by('nombre')
-            
+                        
 # Formulario para crear un usuario
 class CrearUsuarioForm(UserCreationForm):
     # Campo para ingresar el correo electrónico(aun no he decidio si usar email o username )

@@ -88,16 +88,9 @@ def agregar_inmueble(request):
     if request.method == 'POST':
         form = InmuebleForm(request.POST)
         if form.is_valid():
-            # Guarda el inmueble y actualiza el tipo de usuario del arrendador
             inmueble = form.save(commit=False)
             inmueble.arrendador = request.user.usuario
             inmueble.save()
-            usuario = request.user.usuario
-            if usuario.tipo_usuario == 'arrendatario':
-                usuario.tipo_usuario = 'arrendador'
-            elif usuario.tipo_usuario == 'arrendatario':
-                usuario.tipo_usuario = 'ambos'
-            usuario.save()
             messages.success(request, 'Inmueble agregado exitosamente.')
             return redirect('perfil')
     else:

@@ -2,7 +2,10 @@
 
 {% block 'content' %}
 <h1 class="text-center form-title">Bienvenido, {{ user.username }}</h1>
-<a href="{% url 'editar_perfil' %}" class="h1-perfil">Editar perfil</a>
-<hr>
-<a href="{% url 'agregar_inmueble' %}" class="h1-perfil">Agregar inmueble</a>
+
+<div class="d-flex justify-content-center my-4">
+    <a href="{% url 'editar_perfil' %}" class="btn btn-success h1-perfil mr-3 mx-2">Editar perfil</a>
+    <a href="{% url 'agregar_inmueble' %}" class="btn btn-success h1-perfil">Agregar inmueble</a>
+</div>
+
 {% endblock %}

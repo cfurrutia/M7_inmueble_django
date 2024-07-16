@@ -33,11 +33,6 @@ body {
     margin-bottom: 20px;
 }
 
-.h1-perfil {
-    font-size: 2em;
-    font-weight: bold;
-
-}
 
 .inmuebles-grid {
     display: grid;
@@ -76,6 +71,26 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.loading {
+    opacity: 0.5;
+}
+
+.loading-indicator {
+    margin-left: 10px;
+    color: #888;
+}
+
+.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
 .auth-container {
     background-color: white;
     border-radius: 8px;
@@ -180,9 +195,4 @@ body {
 
 .custom-form button {
     margin-top: 10px;
-}
-
-.btn-block {
-    display: block;
-    width: 100%;
 }
