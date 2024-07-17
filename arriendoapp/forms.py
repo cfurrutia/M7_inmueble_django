@@ -5,8 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Formulario para crear un inmueble
 class InmuebleForm(forms.ModelForm):
-    region = forms.ModelChoiceField(queryset=Region.objects.all(), empty_label="Seleccione una región")
-    comuna = forms.ModelChoiceField(queryset=Comuna.objects.none(), empty_label="Seleccione una comuna")
+    region = forms.ModelChoiceField(queryset=Region.objects.all(), empty_label="Región")
+    comuna = forms.ModelChoiceField(queryset=Comuna.objects.none(), empty_label="Comuna")
 
     class Meta:
         model = Inmueble

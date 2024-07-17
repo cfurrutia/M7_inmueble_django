@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+<h2>¿Estás seguro de que quieres borrar este inmueble?</h2>
+<p>{{ inmueble.nombre }} - {{ inmueble.direccion }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, borrar</button>
+</form>
+<a href="{% url 'perfil' %}" class="btn btn-secondary">Cancelar</a>
+{% endblock %}

@@ -1,11 +1,32 @@
 {% extends 'base.html' %}
-
 {% block 'content' %}
-<h1 class="text-center form-title">Bienvenido, {{ user.username }}</h1>
 
-<div class="d-flex justify-content-center my-4">
-    <a href="{% url 'editar_perfil' %}" class="btn btn-success h1-perfil mr-3 mx-2">Editar perfil</a>
-    <a href="{% url 'agregar_inmueble' %}" class="btn btn-success h1-perfil">Agregar inmueble</a>
+<div class="content-container">
+    <h1 class="form-title">Bienvenido, {{ user.username }}</h1>
+
+    <div class="d-flex justify-content-center my-4">
+        <a href="{% url 'editar_perfil' %}" class="btn btn-success mr-3 mx-2">Editar perfil</a>
+        <a href="{% url 'agregar_inmueble' %}" class="btn btn-success">Agregar inmueble</a>
+    </div>
+
+    {% if inmuebles %}
+        <h2 class="mt-5 mb-4">Mis Inmuebles</h2>
+        <div class="inmuebles-grid">
+            {% for inmueble in inmuebles %}
+                <div class="inmueble-card">
+                    <h3>{{ inmueble.nombre }}</h3>
+                    <p><strong>Dirección:</strong> {{ inmueble.direccion }}</p>
+                    <p><strong>Precio:</strong> ${{ inmueble.precio_arriendo }}</p>
+                    <div class="mt-3">
+                        <a href="{% url 'actualizar_inmueble' inmueble.id %}" class="btn btn-sm btn-primary mb-2">Actualizar</a>
+                        <a href="{% url 'borrar_inmueble' inmueble.id %}" class="btn btn-sm btn-danger">Borrar</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center mt-5">Aún no has publicado ningún inmueble.</p>
+    {% endif %}
 </div>
 
 {% endblock %}

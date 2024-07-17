@@ -17,10 +17,7 @@
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a href="{% url 'editar_perfil' %}" class="nav-link text-white">Editar perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'agregar_inmueble' %}" class="nav-link text-white">Agregar inmueble</a>
+                        <a href="{% url 'perfil' %}" class="nav-link text-white">Perfil</a>
                     </li>
                     <li class="nav-item">
                         <form method="post" action="{% url 'logout' %}" class="d-inline">

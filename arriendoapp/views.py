@@ -62,7 +62,9 @@ def login_view(request):
 # Vista para mostrar el perfil del usuario
 @login_required
 def perfil(request):
-    return render(request, 'perfil.html')
+    usuario = request.user.usuario
+    inmuebles = Inmueble.objects.filter(arrendador=usuario)
+    return render(request, 'perfil.html', {'usuario': usuario, 'inmuebles': inmuebles})
 
 # Vista para editar el perfil del usuario
 @login_required
@@ -89,13 +91,44 @@ def agregar_inmueble(request):
         form = InmuebleForm(request.POST)
         if form.is_valid():
             inmueble = form.save(commit=False)
-            inmueble.arrendador = request.user.usuario
+            usuario = request.user.usuario
+            inmueble.arrendador = usuario
             inmueble.save()
+            
+            # Cambiar el tipo de usuario a 'arrendador' si no lo era ya
+            if usuario.tipo_usuario == 'arrendatario':
+                usuario.tipo_usuario = 'arrendador'
+                usuario.save()
+            elif usuario.tipo_usuario == 'ambos':
+                pass  # Ya es ambos, no necesita cambiar
+            
             messages.success(request, 'Inmueble agregado exitosamente.')
             return redirect('perfil')
     else:
         form = InmuebleForm()
     return render(request, 'agregar_inmueble.html', {'form': form})
+
+@login_required
+def actualizar_inmueble(request, inmueble_id):
+    inmueble = get_object_or_404(Inmueble, id=inmueble_id, arrendador=request.user.usuario)
+    if request.method == 'POST':
+        form = InmuebleForm(request.POST, instance=inmueble)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Inmueble actualizado exitosamente.')
+            return redirect('perfil')
+    else:
+        form = InmuebleForm(instance=inmueble)
+    return render(request, 'actualizar_inmueble.html', {'form': form, 'inmueble': inmueble})
+
+@login_required
+def borrar_inmueble(request, inmueble_id):
+    inmueble = get_object_or_404(Inmueble, id=inmueble_id, arrendador=request.user.usuario)
+    if request.method == 'POST':
+        inmueble.delete()
+        messages.success(request, 'Inmueble borrado exitosamente.')
+        return redirect('perfil')
+    return render(request, 'borrar_inmueble.html', {'inmueble': inmueble})
 
 # Vista para solicitar el arriendo de un inmueble (aun no implementada en html urls)
 @login_required

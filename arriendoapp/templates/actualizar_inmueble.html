@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+
+<div class="content-container">
+    <div class="form-container">
+        <h2 class="form-title">Actualizar Inmueble</h2>
+        <form method="post" class="custom-form">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="error-message">
+                            {% for error in field.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success btn-block">Actualizar Inmueble</button>
+        </form>
+        <div class="mt-3">
+            <a href="{% url 'perfil' %}" class="btn btn-secondary btn-block">Cancelar</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
