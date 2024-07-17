@@ -41,7 +41,7 @@ class Usuario(models.Model):
     tipo_usuario = models.CharField(max_length=20, choices=TIPO_USUARIO_CHOICES, default='arrendatario')
     
     def __str__(self):
-        return self.user.username
+        return f"{self.user.first_name} {self.user.last_name} - {self.tipo_usuario} "
         
 # Modelo para el inmueble        
 class Inmueble(models.Model):
@@ -60,7 +60,7 @@ class Inmueble(models.Model):
     arrendador = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre} - {self.comuna} - {self.arrendador}"
 
 # Modelo para la solicitud de arriendo
 class SolicitudArriendo(models.Model):
@@ -70,4 +70,4 @@ class SolicitudArriendo(models.Model):
     estado = models.CharField(max_length=20, default='Pendiente')
 
     def __str__(self):
-        return f"Solicitud de {self.arrendatario} para {self.inmueble}"
+        return f"Solicitud de {self.arrendatario} para {self.inmueble} de {self.inmueble.arrendador}"
