@@ -16,15 +16,18 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a href="{% url 'perfil' %}" class="nav-link text-white">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <form method="post" action="{% url 'logout' %}" class="d-inline">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link text-white dropdown-toggle" id="{{ 'navbarDropdown-'|slugify }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Perfil
+                    </a>
+                    <ul class='dropdown-menu dropdown-menu-end'>
+                        <li><a href="{% url 'perfil' %}" class='dropdown-item'>Perfil</a></li>
+                        <li><form method='post' action='{% url "logout"%}'class='d-inline'>
                             {% csrf_token %}
-                            <button type="submit" class="nav-link text-white bg-transparent border-0">Cerrar sesión</button>
-                        </form>
-                    </li>
+                            <button type='submit'class='dropdown-item'>Cerrar sesión</button>
+                        </form></li>
+                    </ul>
+                </li>
                 {% else %}
                     <li class="nav-item">
                         <a href="{% url 'login' %}" class="nav-link text-white">Iniciar sesión</a>

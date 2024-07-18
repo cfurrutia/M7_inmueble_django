@@ -2933,7 +2933,7 @@
     "user": 4,
     "nombres": "Luis",
     "apellidos": "Ruminot",
-    "rut": "\"20345234-k",
+    "rut": "20345234-k",
     "direccion": "Calle de Santiago 23",
     "telefono": "+56956182934",
     "tipo_usuario": "arrendador"
@@ -2962,7 +2962,7 @@
     "rut": "15676777-5",
     "direccion": "Calle en el norte 333",
     "telefono": "+56944556676",
-    "tipo_usuario": "arrendatario"
+    "tipo_usuario": "arrendador"
   }
 },
 {
@@ -3023,13 +3023,22 @@
   }
 },
 {
-  "model": "arriendoapp.solicitudarriendo",
-  "pk": 1,
+  "model": "arriendoapp.inmueble",
+  "pk": 4,
   "fields": {
-    "arrendatario": 1,
-    "inmueble": 1,
-    "fecha_solicitud": "2024-07-17T04:24:47.833Z",
-    "estado": "Pendiente"
+    "nombre": "Departamento en Temuco",
+    "descripcion": "Cercano al hospital y centro de Temuco con gran servicio de locomoción local.",
+    "m2_construidos": 120,
+    "m2_totales": 300,
+    "estacionamientos": 1,
+    "habitaciones": 3,
+    "banos": 2,
+    "direccion": "Prieto Norte 345",
+    "region": 11,
+    "comuna": 200,
+    "tipo_inmueble": 2,
+    "precio_arriendo": 410000,
+    "arrendador": 5
   }
 }
 ]

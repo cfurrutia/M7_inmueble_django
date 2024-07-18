@@ -2,7 +2,16 @@
 {% block 'content' %}
 
 <div class="content-container">
-    <h1 class="form-title">Bienvenido, {{ user.username }}</h1>
+    <h1 class="form-title">Bienvenido, {{ usuario.nombres }} {{ usuario.apellidos }}</h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Información de contacto</h5>
+          <p class="card-text"><strong>Email:</strong> {{ usuario.user.email }}</p>
+          <p class="card-text"><strong>Dirección:</strong> {{ usuario.direccion }}</p>
+          <p class="card-text"><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+        </div>
+      </div>
 
     <div class="d-flex justify-content-center my-4">
         <a href="{% url 'editar_perfil' %}" class="btn btn-success mr-3 mx-2">Editar perfil</a>
@@ -25,7 +34,7 @@
             {% endfor %}
         </div>
     {% else %}
-        <p class="text-center mt-5">Aún no has publicado ningún inmueble.</p>
+        <p class="alert alert-info">Aún no has publicado ningún inmueble.</p>
     {% endif %}
 </div>
 

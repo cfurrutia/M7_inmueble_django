@@ -5,8 +5,10 @@
     <h1 class="auth-title">Registro de usuario</h1>
     <form action="{% url 'crear_usuario' %}" method="post" class="auth-form">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success btn-block">Registrarse</button>
+        <div class="row">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-success btn-block mt-4">Registrarse</button>
     </form>
 </div>
 {% endblock %}
