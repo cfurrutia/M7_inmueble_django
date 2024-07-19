@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
 {% block 'content' %}
-<h2>¿Estás seguro de que quieres borrar este inmueble?</h2>
-<p>{{ inmueble.nombre }} - {{ inmueble.direccion }}</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Sí, borrar</button>
-</form>
-<a href="{% url 'perfil' %}" class="btn btn-secondary">Cancelar</a>
+<div class="content-container py-5">
+    <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-body text-center">
+            <h2 class="card-title mb-4">Confirmar eliminación</h2>
+            <p class="card-text mb-4">¿Estás seguro de que quieres borrar este inmueble?</p>
+            <h5 class="mb-3">{{ inmueble.nombre }}</h5>
+            <p class="text-muted mb-4">{{ inmueble.direccion }}</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-danger">Sí, borrar</button>
+                    <a href="{% url 'perfil' %}" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

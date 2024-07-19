@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
-
 {% block 'content' %}
-<div class="auth-container">
-    <h1 class="auth-title">Registro de usuario</h1>
-    <form action="{% url 'crear_usuario' %}" method="post" class="auth-form">
+<div class="auth-container my-5">
+    <h1 class="auth-title mb-4">Registro de usuario</h1>
+    <form method="post" class="auth-form">
         {% csrf_token %}
-        <div class="row">
-            {{ form.as_p }}
+        {% for field in form %}
+            <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div class="invalid-feedback d-block">
+                        {% for error in field.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
         </div>
-        <button type="submit" class="btn btn-success btn-block mt-4">Registrarse</button>
     </form>
 </div>
 {% endblock %}

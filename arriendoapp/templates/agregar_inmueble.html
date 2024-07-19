@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block 'content' %}
-<div class="form-container">
-    <h1 class="form-title">Agregar Inmueble</h1>
+<div class="form-container py-4">
+    <h1 class="form-title mb-4">Agregar Inmueble</h1>
     <form method="post" class="custom-form" name="crear_inmueble">
         {% csrf_token %}
         {{ form.non_field_errors }}

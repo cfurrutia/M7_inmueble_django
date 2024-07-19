@@ -24,13 +24,22 @@ body {
     transition: color 0.3s ease;
 }
 
+.navbar-brand {
+    font-weight: 600;
+}
+
+
 .dropdown-menu.dropdown-menu-end {
     right: 0;
     left: auto;
 }
 
+.dropdown-item:active {
+    background-color: green;
+}
+
 .content-container {
-    background-color: #ffffffc9;
+    background-color: #faf9f9c9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
@@ -181,7 +190,7 @@ body {
 }
 
 .error-message {
-    color: red; 
+    color: red;
 }
 
 .custom-form {
@@ -220,6 +229,25 @@ body {
     max-width: 100px;
     height: 70px;
     margin-bottom: 1rem;
+}
+
+.solicitudes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.solicitud-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.solicitud-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
 }
 
 .footer h5 {

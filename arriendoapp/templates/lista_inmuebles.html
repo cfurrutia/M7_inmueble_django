@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
-
 {% block 'content' %}
-<div class="content-container">
-    <h3 class="mb-4 text-center">Listado de arriendo en arriendoapp</h3>
-    <div class="inmuebles-grid">
-        {% for inmueble in inmuebles %}
-        <div class="inmueble-card">
-            <h2>{{ inmueble.nombre }}</h2>
-            <p>{{ inmueble.descripcion|truncatewords:20 }}</p>
-            <p>Precio: ${{ inmueble.precio_arriendo }}</p>
-            <p>Comuna: {{ inmueble.comuna }}</p>
-            <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-success">Ver detalles</a>
+<div class="content-container py-5">
+    <h1 class="mb-4 text-center">Listado de arriendo en ArriendoApp</h1>
+    
+    {% if inmuebles %}
+        <div class="inmuebles-grid">
+            {% for inmueble in inmuebles %}
+                <div class="card inmueble-card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h5">{{ inmueble.nombre }}</h2>
+                        <p class="card-text flex-grow-1">{{ inmueble.descripcion|truncatewords:20 }}</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><strong>Precio:</strong> ${{ inmueble.precio_arriendo }}</li>
+                            <li><strong>Comuna:</strong> {{ inmueble.comuna }}</li>
+                        </ul>
+                        <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-primary mt-auto">Ver detalles</a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-        {% empty %}
-        <p>No hay inmuebles disponibles.</p>
-        {% endfor %}
-    </div>
+    {% else %}
+        <div class="alert alert-info text-center" role="alert">
+            No hay inmuebles disponibles.
+        </div>
+    {% endif %}
 </div>
 {% endblock %}

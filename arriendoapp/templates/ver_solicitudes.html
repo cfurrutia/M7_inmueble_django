@@ -2,19 +2,27 @@
 
 {% block 'content' %}
 <div class="content-container">
-    <h1 class="form-title">Solicitudes de Arriendo</h1>
+    <h1 class="form-title mb-4">Solicitudes de Arriendo</h1>
     {% if solicitudes %}
-        <ul class="list-group text-center">
+        <div class="solicitudes-grid">
             {% for solicitud in solicitudes %}
-                <li class="list-group-item">
-                    <strong>{{ solicitud.arrendatario.usuario.nombres }} {{ solicitud.arrendatario.usuario.apellidos }}</strong> ha solicitado arrendar <strong>{{ solicitud.inmueble.nombre }}</strong>
-                    <p><em>{{ solicitud.mensaje }}</em></p>
-                    <p><em>Fecha de solicitud: {{ solicitud.fecha_solicitud }} por {{ solicitud.arrendatario.email }}</em></p>
-                </li>
+                <div class="solicitud-card">
+                    <h2 class="solicitud-title">{{ solicitud.inmueble.nombre }}</h2>
+                    <div class="solicitud-details">
+                        <p class="solicitante"><strong>Solicitante:</strong> {{ solicitud.arrendatario.usuario.nombres }} {{ solicitud.arrendatario.usuario.apellidos }}</p>
+                        <p class="mensaje"><em>"{{ solicitud.mensaje }}"</em></p>
+                        <p class="fecha-email">
+                            <span class="fecha">{{ solicitud.fecha_solicitud|date:"d/m/Y H:i" }}</span>
+                            <span class="email">{{ solicitud.arrendatario.email }}</span>
+                        </p>
+                    </div>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     {% else %}
-        <p class="alert alert-info">No tienes solicitudes de arriendo en este momento.</p>
+        <div class="alert alert-info text-center" role="alert">
+            <i class="fa-solid fa-circle-info"></i>No tienes solicitudes de arriendo en este momento.
+        </div>
     {% endif %}
 </div>
 {% endblock %}

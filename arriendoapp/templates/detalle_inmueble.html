@@ -1,51 +1,50 @@
 {% extends 'base.html' %}
-
 {% block 'content' %}
-
-<div class="inmueble-detalle content-container">
-    <h1 class="text-center form-title">{{ inmueble.nombre }}</h1>
-    <ul class="list-group">
-      <li class="list-group-item">
-        <strong>Descripción:</strong> {{ inmueble.descripcion }}
-      </li>
-      <li class="list-group-item">
-        <strong>Precio:</strong> ${{ inmueble.precio_arriendo }}
-      </li>
-      <li class="list-group-item">
-        <strong>Metros cuadrados construidos:</strong> {{ inmueble.m2_construidos }}
-      </li>
-      <li class="list-group-item">
-        <strong>Metros cuadrados totales:</strong> {{ inmueble.m2_totales }}
-      </li>
-      <li class="list-group-item">
-        <strong>Estacionamientos:</strong> {{ inmueble.estacionamientos }}
-      </li>
-      <li class="list-group-item">
-        <strong>Habitaciones:</strong> {{ inmueble.habitaciones }}
-      </li>
-      <li class="list-group-item">
-        <strong>Baños:</strong> {{ inmueble.banos }}
-      </li>
-      <li class="list-group-item">
-        <strong>Dirección:</strong> {{ inmueble.direccion }}
-      </li>
-      <li class="list-group-item">
-        <strong>Comuna:</strong> {{ inmueble.comuna }}
-      </li>
-      <li class="list-group-item">
-        <strong>Tipo de inmueble:</strong> {{ inmueble.tipo_inmueble }}
-      </li>
-      <li class="list-group-item">
-        <strong>Arrendador:</strong> {{ inmueble.arrendador }}
-      </li>
-    </ul>
-    
-    {% if user.is_authenticated and user.usuario.tipo_usuario == 'arrendador' or 'ambos' %}
-    <!-- Botón de solicitar arriendo, falta .... -->
-    <div class="text-center mt-4">
-      	<a href="{% url 'solicitar_arriendo' inmueble.id %}" class="btn btn-success">Solicitar arriendo</a>
+<div class="inmueble-detalle content-container py-5">
+    <h1 class="text-center form-title mb-4">{{ inmueble.nombre }}</h1>
+    <div class="card">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">Descripción:</dt>
+                <dd class="col-sm-8">{{ inmueble.descripcion }}</dd>
+                
+                <dt class="col-sm-4">Precio:</dt>
+                <dd class="col-sm-8">${{ inmueble.precio_arriendo }}</dd>
+                
+                <dt class="col-sm-4">Metros cuadrados construidos:</dt>
+                <dd class="col-sm-8">{{ inmueble.m2_construidos }}</dd>
+                
+                <dt class="col-sm-4">Metros cuadrados totales:</dt>
+                <dd class="col-sm-8">{{ inmueble.m2_totales }}</dd>
+                
+                <dt class="col-sm-4">Estacionamientos:</dt>
+                <dd class="col-sm-8">{{ inmueble.estacionamientos }}</dd>
+                
+                <dt class="col-sm-4">Habitaciones:</dt>
+                <dd class="col-sm-8">{{ inmueble.habitaciones }}</dd>
+                
+                <dt class="col-sm-4">Baños:</dt>
+                <dd class="col-sm-8">{{ inmueble.banos }}</dd>
+                
+                <dt class="col-sm-4">Dirección:</dt>
+                <dd class="col-sm-8">{{ inmueble.direccion }}</dd>
+                
+                <dt class="col-sm-4">Comuna:</dt>
+                <dd class="col-sm-8">{{ inmueble.comuna }}</dd>
+                
+                <dt class="col-sm-4">Tipo de inmueble:</dt>
+                <dd class="col-sm-8">{{ inmueble.tipo_inmueble }}</dd>
+                
+                <dt class="col-sm-4">Arrendador:</dt>
+                <dd class="col-sm-8">{{ inmueble.arrendador }}</dd>
+            </dl>
+        </div>
     </div>
+    
+    {% if user.is_authenticated and user.usuario.tipo_usuario == 'arrendador'%}
+        <div class="text-center mt-4">
+            <a href="{% url 'solicitar_arriendo' inmueble.id %}" class="btn btn-success">Solicitar arriendo</a>
+        </div>
     {% endif %}
-  </div>
-
+</div>
 {% endblock %}
