@@ -8,15 +8,18 @@
         <div class="card-body">
             <h5 class="card-title">Información de contacto</h5>
             <p class="card-text"><strong>Email:</strong> {{ usuario.user.email }}</p>
-            <p class="card-text"><strong>Dirección:</strong> {{ usuario.direccion }}</p>
             <p class="card-text"><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
         </div>
     </div>
 
     <div class="d-flex justify-content-center my-4">
         <a href="{% url 'editar_perfil' %}" class="btn btn-success mr-3 mx-2">Editar perfil</a>
-        <a href="{% url 'agregar_inmueble' %}" class="btn btn-success">Agregar inmueble</a>
-        <a href="{% url 'ver_solicitudes' %}" class="btn btn-success">Ver solicitudes de arriendo</a>
+        {% if usuario.tipo_usuario == 'arrendador' %}
+            <a href="{% url 'agregar_inmueble' %}" class="btn btn-success">Agregar inmueble</a>
+            <a href="{% url 'ver_solicitudes' %}" class="btn btn-success">Ver solicitudes de arriendo</a>
+        {% else %}
+            <p>Para ver y solicitar arriendos puedo ir al inicio de nuestra página</p>
+        {% endif %}
     </div>
 
     {% if inmuebles %}

@@ -25,11 +25,9 @@ class TipoInmueble(models.Model):
 
 # Modelo para el usuario
 class Usuario(models.Model):
-    # Tipos de usuario
     TIPO_USUARIO_CHOICES = [
         ('arrendatario', 'Arrendatario'),
         ('arrendador', 'Arrendador'),
-        ('ambos', 'Ambos')
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -39,10 +37,10 @@ class Usuario(models.Model):
     direccion = models.CharField(max_length=200, blank=True)
     telefono = models.CharField(max_length=20, blank=True)
     tipo_usuario = models.CharField(max_length=20, choices=TIPO_USUARIO_CHOICES, default='arrendatario')
-    
+
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name} - {self.tipo_usuario} "
-        
+        return f"{self.nombres} {self.apellidos} - {self.tipo_usuario}"
+    
 # Modelo para el inmueble        
 class Inmueble(models.Model):
     nombre = models.CharField(null= False, blank=False, max_length=100)

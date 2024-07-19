@@ -3,10 +3,14 @@
 {% block 'content' %}
 <div class="form-container">
     <h1 class="form-title">Solicitar Arriendo</h1>
-    <form method="post" class="custom-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success btn-block">Enviar Solicitud</button>
-    </form>
+    {% if request.user.usuario.tipo_usuario == 'arrendatario' %}
+        <form method="post" class="custom-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success btn-block">Enviar Solicitud</button>
+        </form>
+    {% else %}
+        <p>Usted no puede solicitar arriendo.</p>
+    {% endif %}    
 </div>
 {% endblock %}

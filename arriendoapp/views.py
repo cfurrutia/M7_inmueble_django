@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from .forms import InmuebleForm, CrearUsuarioForm, UsuarioEditForm, SolicitudArriendoForm
+from .forms import Usuario, InmuebleForm, CrearUsuarioForm, UsuarioEditForm, SolicitudArriendoForm
 from .models import Inmueble, Comuna, SolicitudArriendo
 from django.http import JsonResponse
 
@@ -30,11 +30,18 @@ def detalle_inmueble(request, inmueble_id):
 # Vista para crear un nuevo usuario
 def crear_usuario(request):
     if request.method == 'POST':
-        # Crea un formulario de creación de usuario con los datos enviados
         form = CrearUsuarioForm(request.POST)
         if form.is_valid():
-            # Guarda el usuario y redirige al usuario a la página de inicio de sesión
-            form.save()
+            user = form.save()
+            Usuario.objects.create(
+                user=user,
+                nombres=form.cleaned_data.get('nombres'),
+                apellidos=form.cleaned_data.get('apellidos'),
+                rut=form.cleaned_data.get('rut'),
+                direccion=form.cleaned_data.get('direccion'),
+                telefono=form.cleaned_data.get('telefono'),
+                tipo_usuario=form.cleaned_data.get('tipo_usuario')
+            )
             messages.success(request, 'Usuario creado exitosamente. Por favor, inicia sesión.')
             return redirect('login')
     else:
@@ -55,7 +62,7 @@ def login_view(request):
             return redirect('lista_inmuebles')
         else:
             
-            return render(request, 'login.html', {'error': 'Invalid username or password'})
+            return render(request, 'login.html', {'error': 'Credenciales incorrectas'})
     else:
         return render(request, 'logout.html')
 
@@ -69,18 +76,17 @@ def perfil(request):
 # Vista para editar el perfil del usuario
 @login_required
 def editar_perfil(request):
-    # Obtiene el usuario asociado al usuario autenticado
     usuario = request.user.usuario
     if request.method == 'POST':
-        # Crea un formulario de edición de usuario con los datos enviados
         form = UsuarioEditForm(request.POST, instance=usuario)
         if form.is_valid():
-            # Guarda los cambios en el usuario y redirige al perfil
-            form.save()
+            usuario = form.save(commit=False)
+            usuario.user.email = form.cleaned_data.get('email')
+            usuario.user.save()
+            usuario.save()
             messages.success(request, 'Perfil actualizado exitosamente.')
             return redirect('perfil')
     else:
-        # Crea un formulario de edición de usuario con los datos del usuario actual
         form = UsuarioEditForm(instance=usuario)
     return render(request, 'editar_perfil.html', {'form': form})
 
