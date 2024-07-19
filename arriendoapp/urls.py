@@ -13,5 +13,6 @@ urlpatterns = [
     path('borrar_inmueble/<int:inmueble_id>/', views.borrar_inmueble, name='borrar_inmueble'),
     path('obtener_comunas/', views.obtener_comunas, name='obtener_comunas'),
     path('solicitar_arriendo/<int:inmueble_id>/', views.solicitar_arriendo, name='solicitar_arriendo'),
+    path('ver_solicitudes/', views.ver_solicitudes, name='ver_solicitudes'),
     
 ]

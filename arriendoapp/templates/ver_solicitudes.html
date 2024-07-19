@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="content-container">
+    <h1 class="form-title">Solicitudes de Arriendo</h1>
+    {% if solicitudes %}
+        <ul class="list-group">
+            {% for solicitud in solicitudes %}
+                <li class="list-group-item">
+                    <strong>{{ solicitud.arrendatario.username }}</strong> ha solicitado arrendar <strong>{{ solicitud.inmueble.nombre }}</strong>.
+                    <p>{{ solicitud.mensaje }}</p>
+                    <p><em>Fecha de solicitud: {{ solicitud.fecha_solicitud }}</em></p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="alert alert-info">No tienes solicitudes de arriendo en este momento.</p>
+    {% endif %}
+</div>
+{% endblock %}

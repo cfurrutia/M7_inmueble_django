@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from .forms import InmuebleForm, CrearUsuarioForm, UsuarioEditForm
-from .models import Inmueble, Comuna
+from .forms import InmuebleForm, CrearUsuarioForm, UsuarioEditForm, SolicitudArriendoForm
+from .models import Inmueble, Comuna, SolicitudArriendo
 from django.http import JsonResponse
 
 # Vista para obtener las comunas según la región seleccionada
@@ -130,14 +130,33 @@ def borrar_inmueble(request, inmueble_id):
         return redirect('perfil')
     return render(request, 'borrar_inmueble.html', {'inmueble': inmueble})
 
-# Vista para solicitar el arriendo de un inmueble (aun no implementada en html urls)
+# Vista para solicitar el arriendo de un inmueble
 @login_required
 def solicitar_arriendo(request, inmueble_id):
     inmueble = get_object_or_404(Inmueble, id=inmueble_id)
-    # Obtiene el usuario autenticado y actualiza su tipo de usuario si es necesario
-    usuario = request.user.usuario
-    if usuario.tipo_usuario == 'arrendador':
-        usuario.tipo_usuario = 'ambos'
-        usuario.save()
-    messages.success(request, 'Solicitud de arriendo enviada.')
-    return redirect('detalle_inmueble', inmueble_id=inmueble_id)
+    
+    if request.method == 'POST':
+        form = SolicitudArriendoForm(request.POST)
+        if form.is_valid():
+            solicitud = form.save(commit=False)
+            solicitud.arrendatario = request.user
+            solicitud.inmueble = inmueble
+            solicitud.save()
+            messages.success(request, 'Solicitud enviada exitosamente.')
+            return redirect('detalle_inmueble', inmueble_id=inmueble.id)
+    else:
+        form = SolicitudArriendoForm()
+    
+    return render(request, 'solicitar_arriendo.html', {'form': form, 'inmueble': inmueble})
+
+@login_required
+def ver_solicitudes(request):
+    usuario = request.user.usuario 
+    
+    inmuebles = Inmueble.objects.filter(arrendador=usuario)
+    if not inmuebles.exists():
+        messages.info(request, 'No tienes inmuebles para arrendar.')
+        return redirect('perfil')
+    
+    solicitudes = SolicitudArriendo.objects.filter(inmueble__in=inmuebles)
+    return render(request, 'ver_solicitudes.html', {'solicitudes': solicitudes})

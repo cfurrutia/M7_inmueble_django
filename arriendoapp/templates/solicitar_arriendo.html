@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<h1>Solicitar arriendo para {{ inmueble.nombre }}</h1>
-<form method="post">
-    {% csrf_token %}
-    <p>¿Estás seguro de que deseas solicitar el arriendo de este inmueble?</p>
-    <button type="submit" class="btn btn-success">Confirmar solicitud</button>
-    <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-success">Cancelar</a>
-</form>
+<div class="form-container">
+    <h1 class="form-title">Solicitar Arriendo</h1>
+    <form method="post" class="custom-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success btn-block">Enviar Solicitud</button>
+    </form>
+</div>
 {% endblock %}

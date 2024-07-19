@@ -64,10 +64,10 @@ class Inmueble(models.Model):
 
 # Modelo para la solicitud de arriendo
 class SolicitudArriendo(models.Model):
-    arrendatario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    inmueble = models.ForeignKey(Inmueble, on_delete=models.CASCADE)
+    arrendatario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitudes')
+    inmueble = models.ForeignKey(Inmueble, on_delete=models.CASCADE, related_name='solicitudes')
     fecha_solicitud = models.DateTimeField(auto_now_add=True)
-    estado = models.CharField(max_length=20, default='Pendiente')
+    mensaje = models.TextField(blank=True)
 
     def __str__(self):
-        return f"Solicitud de {self.arrendatario} para {self.inmueble} de {self.inmueble.arrendador}"
+        return f'Solicitud de {self.arrendatario.username} para {self.inmueble.nombre}'

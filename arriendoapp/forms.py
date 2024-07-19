@@ -1,5 +1,5 @@
 from django import forms
-from .models import Inmueble, Usuario, Region, Comuna
+from .models import Inmueble, Usuario, Region, Comuna, SolicitudArriendo
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -65,3 +65,8 @@ class UsuarioEditForm(forms.ModelForm):
             usuario.user.email = self.cleaned_data['email']
             usuario.user.save()
         return usuario
+    
+class SolicitudArriendoForm(forms.ModelForm):
+    class Meta:
+        model = SolicitudArriendo
+        fields = ['mensaje']
