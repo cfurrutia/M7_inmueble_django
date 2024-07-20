@@ -2962,7 +2962,7 @@
     "rut": "15676777-5",
     "direccion": "Calle en el norte 333",
     "telefono": "+56944556676",
-    "tipo_usuario": "arrendatario"
+    "tipo_usuario": "arrendador"
   }
 },
 {
@@ -2975,6 +2975,19 @@
     "rut": "15446753-1",
     "direccion": "Calle de gorbea 123",
     "telefono": "+56922331313",
+    "tipo_usuario": "arrendatario"
+  }
+},
+{
+  "model": "arriendoapp.usuario",
+  "pk": 7,
+  "fields": {
+    "user": 8,
+    "nombres": "Elida",
+    "apellidos": "Quijada",
+    "rut": "13436888-k",
+    "direccion": "Calle de Talcahuano 345",
+    "telefono": "+56945769222",
     "tipo_usuario": "arrendatario"
   }
 },

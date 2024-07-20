@@ -1,0 +1,93 @@
+[
+{
+  "model": "arriendoapp.usuario",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "nombres": "Juana",
+    "apellidos": "Carmona",
+    "rut": "9234564-5",
+    "direccion": "Calle principal 123",
+    "telefono": "+56923455576",
+    "tipo_usuario": "arrendatario"
+  }
+},
+{
+  "model": "arriendoapp.usuario",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "nombres": "Cesar",
+    "apellidos": "Fuentes",
+    "rut": "15678888-1",
+    "direccion": "Avenida de providencia 222",
+    "telefono": "+56923441919",
+    "tipo_usuario": "arrendatario"
+  }
+},
+{
+  "model": "arriendoapp.usuario",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "nombres": "Luis",
+    "apellidos": "Ruminot",
+    "rut": "20345234-k",
+    "direccion": "Calle de Santiago 23",
+    "telefono": "+56956182934",
+    "tipo_usuario": "arrendador"
+  }
+},
+{
+  "model": "arriendoapp.usuario",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "nombres": "Felipe",
+    "apellidos": "Parada",
+    "rut": "15676232-2",
+    "direccion": "Pasaje 3 de Temuco 345",
+    "telefono": "+56945723223",
+    "tipo_usuario": "arrendador"
+  }
+},
+{
+  "model": "arriendoapp.usuario",
+  "pk": 5,
+  "fields": {
+    "user": 6,
+    "nombres": "Juan",
+    "apellidos": "Perez",
+    "rut": "15676777-5",
+    "direccion": "Calle en el norte 333",
+    "telefono": "+56944556676",
+    "tipo_usuario": "arrendador"
+  }
+},
+{
+  "model": "arriendoapp.usuario",
+  "pk": 6,
+  "fields": {
+    "user": 7,
+    "nombres": "Estela",
+    "apellidos": "Toro",
+    "rut": "15446753-1",
+    "direccion": "Calle de gorbea 123",
+    "telefono": "+56922331313",
+    "tipo_usuario": "arrendatario"
+  }
+},
+{
+  "model": "arriendoapp.usuario",
+  "pk": 7,
+  "fields": {
+    "user": 8,
+    "nombres": "Elida",
+    "apellidos": "Quijada",
+    "rut": "13436888-k",
+    "direccion": "Calle de Talcahuano 345",
+    "telefono": "+56945769222",
+    "tipo_usuario": "arrendatario"
+  }
+}
+]

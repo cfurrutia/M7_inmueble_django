@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "nombre": "Departamento en Valparaiso",
-    "descripcion": "Amplio, buen lugar para vivir,  con buena locomociÃ³n",
+    "descripcion": "Amplio, buen lugar para vivir,  con buena locomoción",
     "m2_construidos": 78,
     "m2_totales": 78,
     "estacionamientos": 1,
@@ -23,7 +23,7 @@
   "pk": 2,
   "fields": {
     "nombre": "Casa en Providencia",
-    "descripcion": "Cercano a varios lugares  de entretenciÃ³n y servicios",
+    "descripcion": "Cercano a varios lugares  de entretención y servicios",
     "m2_construidos": 80,
     "m2_totales": 100,
     "estacionamientos": 1,
@@ -42,7 +42,7 @@
   "pk": 3,
   "fields": {
     "nombre": "Parcela en La Serena",
-    "descripcion": "Amplia parcela cerca de la carretera con acceso a servicio de luz y agua potable con 3 habitaciones y dos baÃ±os",
+    "descripcion": "Amplia parcela cerca de la carretera con acceso a servicio de luz y agua potable con 3 habitaciones y dos baños",
     "m2_construidos": 400,
     "m2_totales": 5000,
     "estacionamientos": 5,
@@ -54,6 +54,25 @@
     "tipo_inmueble": 3,
     "precio_arriendo": 700000,
     "arrendador": 4
+  }
+},
+{
+  "model": "arriendoapp.inmueble",
+  "pk": 4,
+  "fields": {
+    "nombre": "Departamento en Temuco",
+    "descripcion": "Cercano al hospital y centro de Temuco con gran servicio de locomoción local.",
+    "m2_construidos": 120,
+    "m2_totales": 300,
+    "estacionamientos": 1,
+    "habitaciones": 3,
+    "banos": 2,
+    "direccion": "Prieto Norte 345",
+    "region": 11,
+    "comuna": 200,
+    "tipo_inmueble": 2,
+    "precio_arriendo": 410000,
+    "arrendador": 5
   }
 }
 ]
