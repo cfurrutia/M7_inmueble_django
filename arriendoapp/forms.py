@@ -45,7 +45,9 @@ class CrearUsuarioForm(UserCreationForm):
 
 # Formulario para editar un usuario
 class UsuarioEditForm(forms.ModelForm):
-    email = forms.EmailField(required=True)
+    email = forms.EmailField(required=True, disabled=True) # solo si es necesario para el futuro
+    rut = forms.CharField(disabled=False) # solo si es necesario para el futuro
+    tipo_usuario = forms.ChoiceField(choices=Usuario.TIPO_USUARIO_CHOICES, disabled=True)
 
     class Meta:
         model = Usuario
@@ -53,17 +55,13 @@ class UsuarioEditForm(forms.ModelForm):
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Si el usuario tiene una cuenta asociada, se inicializa el campo de email con el correo actual
         if self.instance.user:
             self.fields['email'].initial = self.instance.user.email
 
     def save(self, commit=True):
-        # Guarda los cambios en el usuario y actualiza el correo electrónico en la cuenta de usuario
         usuario = super().save(commit=False)
         if commit:
             usuario.save()
-            usuario.user.email = self.cleaned_data['email']
-            usuario.user.save()
         return usuario
     
 class SolicitudArriendoForm(forms.ModelForm):

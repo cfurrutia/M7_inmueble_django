@@ -28,22 +28,46 @@ body {
     font-weight: 600;
 }
 
-
 .dropdown-menu.dropdown-menu-end {
     right: 0;
     left: auto;
 }
 
 .dropdown-item:active {
-    background-color: green;
+    background-color: rgb(224, 238, 29);
 }
 
 .content-container {
-    background-color: #faf9f9c9;
+    background-color: #d0d2dfc9;
     border-radius: 10px;
+    border: 3px solid #9bb913;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin-top: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+}
+
+.list-group-item i {
+    margin-right: 10px;
+    color: #384d64;
+}
+
+.btn-primary {
+    background-color: #111922;
+    border-color: #2f345e;
+}
+
+.btn-primary:hover {
+    background-color: #a8c505;
+    border-color: #00b35f;
 }
 
 .inmuebles-grid {
@@ -53,8 +77,8 @@ body {
 }
 
 .inmueble-card {
-    background-color: #d8faf5;
-    border: 1px solid #406992;
+    background-color: #eef4fd;
+    border: 3px solid #9bb913;
     border-radius: 10px;
     padding: 20px;
 }
@@ -104,8 +128,8 @@ body {
 }
 
 .auth-container {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.836);
+    border: 3px solid #9bb913;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -140,7 +164,7 @@ body {
 .auth-form input[type="email"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 3px solid #9bb913;
     border-radius: 4px;
 }
 
@@ -160,13 +184,13 @@ body {
 
 
 .form-control {
-    border: 2px solid green;
+    border: 3px solid #9bb913;
     border-radius: 5px;
     padding: 5px;
 }
 
 .form-container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.938);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -217,18 +241,12 @@ body {
 .custom-form select {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 3px solid #9bb913;
     border-radius: 4px;
 }
 
 .custom-form button {
     margin-top: 10px;
-}
-
-.footer img {
-    max-width: 100px;
-    height: 70px;
-    margin-bottom: 1rem;
 }
 
 .solicitudes-grid {
@@ -238,8 +256,8 @@ body {
 }
 
 .solicitud-card {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    background-color: #b1c4d8;
+    border: 2px solid #9bb913;
     border-radius: 10px;
     padding: 20px;
     transition: all 0.3s ease;
@@ -250,6 +268,11 @@ body {
     transform: translateY(-5px);
 }
 
+.footer img {
+    max-width: 100px;
+    height: 70px;
+    margin-bottom: 1rem;
+}
 .footer h5 {
     font-weight: bold;
     margin-bottom: 0.5rem;

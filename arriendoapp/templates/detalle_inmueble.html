@@ -43,7 +43,7 @@
     
     {% if user.is_authenticated and user.usuario.tipo_usuario == 'arrendador'%}
         <div class="text-center mt-4">
-            <a href="{% url 'solicitar_arriendo' inmueble.id %}" class="btn btn-success">Solicitar arriendo</a>
+            <a href="{% url 'solicitar_arriendo' inmueble.id %}" class="btn btn-primary">Solicitar arriendo</a>
         </div>
     {% endif %}
 </div>

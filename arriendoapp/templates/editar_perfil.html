@@ -2,11 +2,12 @@
 
 {% block 'content' %}
 <div class="form-container">
-    <h1 class="form-title">Editar Perfil</h1>
+    <h1 class="form-title mb-4">Editar Perfil</h1>
     <form method="post" class="custom-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-success btn-block">Guardar cambios</button>
+        <button type="submit" class="btn btn-primary btn-block">Guardar cambios</button>
+        <a href="{% url 'perfil' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 {% endblock %}
