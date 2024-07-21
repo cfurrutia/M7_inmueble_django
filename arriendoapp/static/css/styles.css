@@ -7,10 +7,55 @@
 
 body {
     font-family: "Raleway", sans-serif;
-    background: url("/static/fondo.jpg") center/cover no-repeat fixed;
+    opacity: 0.95;
+    background: url("/static/imagenes/fondo.jpg") center/cover no-repeat fixed;
     color: #333;
     line-height: 1.6;
 }
+
+.main-header {
+    background-color: #c1c8cf;
+    padding: 2rem 0;
+}
+
+.site-title {
+    font-size: 3.5rem;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.site-description {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+#headerCarousel {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
 
 .container {
     width: 100%;
@@ -274,6 +319,15 @@ select:focus {
         width: 100%;
         margin-bottom: 10px;
     }
+
+    #carouselExampleAutoplaying .carousel-inner {
+        display: none;
+    }
+    #carouselExampleAutoplaying .carousel-control-prev,
+    #carouselExampleAutoplaying .carousel-control-next {
+        display: none;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -292,6 +346,14 @@ select:focus {
 
     .inmuebles-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-header {
+        text-align: center;
+    }
+
+    #headerCarousel {
+        margin-top: 1rem;
     }
 }
 

@@ -1,6 +1,40 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
+
+{% load static %}
+<div class="container-fluid shadow p-2 mb-5 bg-body-tertiary rounded">
+    <div class="row">
+        <div class="col-md-6">
+                <h1 class="site-title">ArriendoApp</h1>
+                <p class="site-description">Encuentra tu hogar ideal para vivir</p>
+            </div>
+    <div class="col-md-6">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'imagenes/casa1.jpg' %}" class="d-block w-100" alt="casa1">
+            </div>
+        <div class="carousel-item">
+            <img src="{% static 'imagenes/depto1.jpg' %}" class="d-block w-100" alt="depto1">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'imagenes/parcela1.jpg' %}" class="d-block w-100" alt="parccela1">
+        </div>
+    </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+    </div>
+    </div>
+</div>
+
 <div class="content-container">
     <h1 class="mb-5 text-center">Listado de arriendos en ArriendoApp</h1>
     
