@@ -1,50 +1,51 @@
 {% extends 'base.html' %}
 {% block 'content' %}
-<div class="inmueble-detalle content-container py-5">
-    <h1 class="text-center form-title mb-4">{{ inmueble.nombre }}</h1>
-    <div class="card">
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-4">Descripción:</dt>
-                <dd class="col-sm-8">{{ inmueble.descripcion }}</dd>
-                
-                <dt class="col-sm-4">Precio:</dt>
-                <dd class="col-sm-8">${{ inmueble.precio_arriendo }}</dd>
-                
-                <dt class="col-sm-4">Metros cuadrados construidos:</dt>
-                <dd class="col-sm-8">{{ inmueble.m2_construidos }}</dd>
-                
-                <dt class="col-sm-4">Metros cuadrados totales:</dt>
-                <dd class="col-sm-8">{{ inmueble.m2_totales }}</dd>
-                
-                <dt class="col-sm-4">Estacionamientos:</dt>
-                <dd class="col-sm-8">{{ inmueble.estacionamientos }}</dd>
-                
-                <dt class="col-sm-4">Habitaciones:</dt>
-                <dd class="col-sm-8">{{ inmueble.habitaciones }}</dd>
-                
-                <dt class="col-sm-4">Baños:</dt>
-                <dd class="col-sm-8">{{ inmueble.banos }}</dd>
-                
-                <dt class="col-sm-4">Dirección:</dt>
-                <dd class="col-sm-8">{{ inmueble.direccion }}</dd>
-                
-                <dt class="col-sm-4">Comuna:</dt>
-                <dd class="col-sm-8">{{ inmueble.comuna }}</dd>
-                
-                <dt class="col-sm-4">Tipo de inmueble:</dt>
-                <dd class="col-sm-8">{{ inmueble.tipo_inmueble }}</dd>
-                
-                <dt class="col-sm-4">Arrendador:</dt>
-                <dd class="col-sm-8">{{ inmueble.arrendador }}</dd>
-            </dl>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <div class="form-container my-5">
+                <h1 class="form-title mb-4 text-center">{{ inmueble.nombre }}</h1>
+                <div class="content-container">
+                    <dl class="row">
+                        <dt class="col-sm-4">Descripción:</dt>
+                        <dd class="col-sm-8">{{ inmueble.descripcion }}</dd>
+                        
+                        <dt class="col-sm-4">Precio:</dt>
+                        <dd class="col-sm-8">${{ inmueble.precio_arriendo }}</dd>
+                        
+                        <dt class="col-sm-4">Metros cuadrados construidos:</dt>
+                        <dd class="col-sm-8">{{ inmueble.m2_construidos }}</dd>
+                        
+                        <dt class="col-sm-4">Metros cuadrados totales:</dt>
+                        <dd class="col-sm-8">{{ inmueble.m2_totales }}</dd>
+                        
+                        <dt class="col-sm-4">Estacionamientos:</dt>
+                        <dd class="col-sm-8">{{ inmueble.estacionamientos }}</dd>
+                        
+                        <dt class="col-sm-4">Habitaciones:</dt>
+                        <dd class="col-sm-8">{{ inmueble.habitaciones }}</dd>
+                        
+                        <dt class="col-sm-4">Baños:</dt>
+                        <dd class="col-sm-8">{{ inmueble.banos }}</dd>
+                        
+                        <dt class="col-sm-4">Dirección:</dt>
+                        <dd class="col-sm-8">{{ inmueble.direccion }}</dd>
+                        
+                        <dt class="col-sm-4">Comuna:</dt>
+                        <dd class="col-sm-8">{{ inmueble.comuna }}</dd>
+                        
+                        <dt class="col-sm-4">Tipo de inmueble:</dt>
+                        <dd class="col-sm-8">{{ inmueble.tipo_inmueble }}</dd>
+                        
+                        <dt class="col-sm-4">Arrendador:</dt>
+                        <dd class="col-sm-8">{{ inmueble.arrendador }}</dd>
+                    </dl>
+                </div>
+                {% if user.is_authenticated and user_type == 'arrendatario' %}
+                    <a href="{% url 'solicitar_arriendo' inmueble.id %}" class="btn btn-primary">Solicitar Arriendo</a>
+                {% endif %}
+            </div>
         </div>
     </div>
-    
-    {% if user.is_authenticated and user.usuario.tipo_usuario == 'arrendador'%}
-        <div class="text-center mt-4">
-            <a href="{% url 'solicitar_arriendo' inmueble.id %}" class="btn btn-primary">Solicitar arriendo</a>
-        </div>
-    {% endif %}
 </div>
 {% endblock %}

@@ -128,6 +128,12 @@ def actualizar_inmueble(request, inmueble_id):
     return render(request, 'actualizar_inmueble.html', {'form': form, 'inmueble': inmueble})
 
 @login_required
+def detalle_inmueble(request, inmueble_id):
+    inmueble = get_object_or_404(Inmueble, id=inmueble_id)
+    user_type = request.user.usuario.tipo_usuario if hasattr(request.user, 'usuario') else None
+    return render(request, 'detalle_inmueble.html', {'inmueble': inmueble, 'user_type': user_type})
+
+@login_required
 def borrar_inmueble(request, inmueble_id):
     inmueble = get_object_or_404(Inmueble, id=inmueble_id, arrendador=request.user.usuario)
     if request.method == 'POST':

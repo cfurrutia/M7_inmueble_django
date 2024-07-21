@@ -1,28 +1,32 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<div class="content-container">
-    <h1 class="form-title mb-4">Solicitudes de Arriendo</h1>
-    {% if solicitudes %}
-        <div class="solicitudes-grid">
-            {% for solicitud in solicitudes %}
-                <div class="solicitud-card">
-                    <h2 class="solicitud-title">{{ solicitud.inmueble.nombre }}</h2>
-                    <div class="solicitud-details">
-                        <p class="solicitante"><strong>Solicitante:</strong> {{ solicitud.arrendatario.usuario.nombres }} {{ solicitud.arrendatario.usuario.apellidos }}</p>
-                        <p class="mensaje"><em>"{{ solicitud.mensaje }}"</em></p>
-                        <p class="fecha-email">
-                            <span class="fecha">{{ solicitud.fecha_solicitud|date:"d/m/Y H:i" }}</span>
-                            <span class="email">{{ solicitud.arrendatario.email }}</span>
-                        </p>
+<div class="content-container py-5">
+    <div class="container">
+        <h1 class="form-title text-center mb-4">Solicitudes de Arriendo</h1>
+        {% if solicitudes %}
+            <div class="row g-4">
+                {% for solicitud in solicitudes %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="solicitud-card bg-white p-3 rounded shadow-sm h-100">
+                            <h2 class="solicitud-title h5 mb-3">{{ solicitud.inmueble.nombre }}</h2>
+                            <div class="solicitud-details">
+                                <p class="solicitante mb-2"><strong>Solicitante:</strong> {{ solicitud.arrendatario.usuario.nombres }} {{ solicitud.arrendatario.usuario.apellidos }}</p>
+                                <p class="mensaje mb-3"><em>"{{ solicitud.mensaje }}"</em></p>
+                                <div class="fecha-email d-flex justify-content-between align-items-center">
+                                    <span class="fecha small text-muted">{{ solicitud.fecha_solicitud|date:"d/m/Y H:i" }}</span>
+                                    <span class="email small text-muted">{{ solicitud.arrendatario.email }}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <div class="alert alert-info text-center" role="alert">
-            <i class="fa-solid fa-circle-info"></i>No tienes solicitudes de arriendo en este momento.
-        </div>
-    {% endif %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-info text-center" role="alert">
+                <i class="fa-solid fa-circle-info me-2"></i>No tienes solicitudes de arriendo en este momento.
+            </div>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

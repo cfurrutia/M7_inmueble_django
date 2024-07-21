@@ -1,13 +1,33 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<div class="form-container">
-    <h1 class="form-title mb-4">Editar Perfil</h1>
-    <form method="post" class="custom-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary btn-block">Guardar cambios</button>
-        <a href="{% url 'perfil' %}" class="btn btn-secondary">Cancelar</a>
-    </form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="form-container my-5">
+                <h1 class="form-title mb-4">Editar Perfil</h1>
+                <form method="post" class="custom-form">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group mb-3">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="error-message mt-1">
+                                    {% for error in field.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        <a href="{% url 'perfil' %}" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

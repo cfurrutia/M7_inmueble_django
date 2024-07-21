@@ -2,21 +2,36 @@
 
 {% block 'content' %}
 <div class="content-container">
-    <h3 class="mb-5 text-center">Listado de arriendo en arriendoapp</h3>
+    <h1 class="mb-5 text-center">Listado de arriendos en ArriendoApp</h1>
+    
+    {% if inmuebles %}
     <div class="inmuebles-grid">
         {% for inmueble in inmuebles %}
         <div class="inmueble-card">
-            <h2>{{ inmueble.nombre }}</h2>
-            <p>{{ inmueble.descripcion|truncatewords:20 }}</p>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><p>Precio: <i class="fas fa-dollar-sign"></i> {{ inmueble.precio_arriendo }}</p></li>
-                <li class="list-group-item"><p>Comuna: <i class="fas fa-map-marker-alt"></i> {{ inmueble.comuna }}</p></li>
-                <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-primary">Ver detalles</a>
-            </ul>    
+            <div class="card-header">
+                <h2>{{ inmueble.nombre }}</h2>
+            </div>
+            <div class="card-body">
+                <p class="descripcion">{{ inmueble.descripcion|truncatewords:20 }}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <i class="fas fa-dollar-sign"></i> Precio: {{ inmueble.precio_arriendo }}
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fas fa-map-marker-alt"></i> Comuna: {{ inmueble.comuna }}
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-primary btn-block">Ver detalles</a>
+            </div>
         </div>
-        {% empty %}
-        <p>No hay inmuebles disponibles.</p>
         {% endfor %}
     </div>
+    {% else %}
+    <div class="alert alert-info" role="alert">
+        <i class="fas fa-info-circle"></i> No hay inmuebles disponibles en este momento.
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
