@@ -20,13 +20,13 @@ body {
 
 .site-title {
     font-size: 3.5rem;
-    color: #007bff;
+    color: #35a9b6;
     margin-bottom: 0.5rem;
 }
 
 .site-description {
     font-size: 1.2rem;
-    color: #6c757d;
+    color: #9c9b79;
 }
 
 #headerCarousel {
@@ -85,8 +85,10 @@ body {
 }
 
 .navbar {
-    background-color: rgba(33, 37, 41, 0.75);
+
     padding: 10px 0;
+    background-color: #2e4049;
+    color: #fff;
 }
 
 .navbar .nav-link {
@@ -118,7 +120,7 @@ label {
 .content-container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: rgba(208, 210, 223, 0.9);
+    background-color: rgba(250, 251, 255, 0.9);
     border-radius: 10px;
     border: 3px solid #9bb913;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -179,8 +181,8 @@ select:focus {
 }
 
 .inmueble-card {
-    background-color: #fff;
-    border: 3px solid #9bb913;
+    background-color: #f7fcfd;
+    border: 3px solid #2d8d45;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -261,8 +263,8 @@ select:focus {
 
 .btn-primary:hover {
 
-    background-color: #a8c505;
-    border-color: #00b35f;
+    background-color: #35a9b6;
+    border-color: #2f345e;
 }
 
 .btn-secondary {
