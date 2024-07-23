@@ -27,27 +27,38 @@ class InmuebleForm(forms.ModelForm):
                         
 # Formulario para crear un usuario
 class CrearUsuarioForm(UserCreationForm):
-    # Campo para ingresar el correo electrónico(aun no he decidio si usar email o username )
     email = forms.EmailField(required=True)
+    nombres = forms.CharField(max_length=100, required=True)
+    apellidos = forms.CharField(max_length=100, required=True)
+    rut = forms.CharField(max_length=20, required=True)
+    direccion = forms.CharField(max_length=200, required=True)
+    telefono = forms.CharField(max_length=20, required=True)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2', 'nombres', 'apellidos', 'rut', 'direccion', 'telefono']
 
     def save(self, commit=True):
-        # Guarda el usuario y crea un objeto Usuario asociado a él
         user = super().save(commit=False)
         user.email = self.cleaned_data['email']
         if commit:
             user.save()
-            Usuario.objects.create(user=user)
+            Usuario.objects.create(
+                user=user,
+                nombres=self.cleaned_data['nombres'],
+                apellidos=self.cleaned_data['apellidos'],
+                rut=self.cleaned_data['rut'],
+                direccion=self.cleaned_data['direccion'],
+                telefono=self.cleaned_data['telefono'],
+                tipo_usuario='arrendatario'  # Establecer como arrendatario por defecto
+            )
         return user
 
 # Formulario para editar un usuario
 class UsuarioEditForm(forms.ModelForm):
-    email = forms.EmailField(required=True, disabled=True) # solo si es necesario para el futuro
-    rut = forms.CharField(disabled=False) # solo si es necesario para el futuro
-    tipo_usuario = forms.ChoiceField(choices=Usuario.TIPO_USUARIO_CHOICES, disabled=True)
+    email = forms.EmailField(required=True, disabled=False)
+    rut = forms.CharField(disabled=False)
+    tipo_usuario = forms.ChoiceField(choices=Usuario.TIPO_USUARIO_CHOICES, disabled=True, required=False)
 
     class Meta:
         model = Usuario
@@ -57,6 +68,7 @@ class UsuarioEditForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         if self.instance.user:
             self.fields['email'].initial = self.instance.user.email
+        self.fields['tipo_usuario'].initial = self.instance.tipo_usuario
 
     def save(self, commit=True):
         usuario = super().save(commit=False)

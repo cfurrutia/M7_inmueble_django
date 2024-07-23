@@ -33,16 +33,7 @@ def crear_usuario(request):
         form = CrearUsuarioForm(request.POST)
         if form.is_valid():
             user = form.save()
-            Usuario.objects.create(
-                user=user,
-                nombres=form.cleaned_data.get('nombres'),
-                apellidos=form.cleaned_data.get('apellidos'),
-                rut=form.cleaned_data.get('rut'),
-                direccion=form.cleaned_data.get('direccion'),
-                telefono=form.cleaned_data.get('telefono'),
-                tipo_usuario=form.cleaned_data.get('tipo_usuario')
-            )
-            messages.success(request, 'Usuario creado exitosamente. Por favor, inicia sesión.')
+            messages.success(request, 'Usuario creado exitosamente como arrendatario. Por favor, inicia sesión.')
             return redirect('login')
     else:
         form = CrearUsuarioForm()

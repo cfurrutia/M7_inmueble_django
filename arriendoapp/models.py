@@ -31,11 +31,11 @@ class Usuario(models.Model):
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    nombres = models.CharField(max_length=100, blank=True)
-    apellidos = models.CharField(max_length=100, blank=True)
-    rut = models.CharField(max_length=20, blank=True)
-    direccion = models.CharField(max_length=200, blank=True)
-    telefono = models.CharField(max_length=20, blank=True)
+    nombres = models.CharField(max_length=100)
+    apellidos = models.CharField(max_length=100)
+    rut = models.CharField(max_length=20)
+    direccion = models.CharField(max_length=200)
+    telefono = models.CharField(max_length=20)
     tipo_usuario = models.CharField(max_length=20, choices=TIPO_USUARIO_CHOICES, default='arrendatario')
 
     def __str__(self):

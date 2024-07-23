@@ -2904,141 +2904,186 @@
   "model": "arriendoapp.usuario",
   "pk": 1,
   "fields": {
-    "user": 2,
-    "nombres": "Juana",
-    "apellidos": "Carmona",
-    "rut": "9234564-5",
-    "direccion": "Calle principal 123",
-    "telefono": "+56923455576",
-    "tipo_usuario": "arrendatario"
+    "user": 3,
+    "nombres": "Felipe",
+    "apellidos": "Parada",
+    "rut": "15456666-2",
+    "direccion": "calle falsa 124",
+    "telefono": "+56934343432",
+    "tipo_usuario": "arrendador"
   }
 },
 {
   "model": "arriendoapp.usuario",
   "pk": 2,
   "fields": {
-    "user": 3,
-    "nombres": "Cesar",
-    "apellidos": "Fuentes",
-    "rut": "15678888-1",
-    "direccion": "Avenida de providencia 222",
-    "telefono": "+56923441919",
-    "tipo_usuario": "arrendatario"
+    "user": 4,
+    "nombres": "Luis",
+    "apellidos": "ruminot",
+    "rut": "15678888-3",
+    "direccion": "Calle central 123",
+    "telefono": "+56934343422",
+    "tipo_usuario": "arrendador"
   }
 },
 {
   "model": "arriendoapp.usuario",
   "pk": 3,
   "fields": {
-    "user": 4,
-    "nombres": "Luis",
-    "apellidos": "Ruminot",
-    "rut": "20345234-k",
-    "direccion": "Calle de Santiago 23",
-    "telefono": "+56956182934",
-    "tipo_usuario": "arrendador"
-  }
-},
-{
-  "model": "arriendoapp.usuario",
-  "pk": 4,
-  "fields": {
-    "user": 5,
-    "nombres": "Felipe",
-    "apellidos": "Parada",
-    "rut": "15676232-2",
-    "direccion": "Pasaje 3 de Temuco 345",
-    "telefono": "+56945723223",
-    "tipo_usuario": "arrendador"
+    "user": 6,
+    "nombres": "Cesar",
+    "apellidos": "Fuentes",
+    "rut": "14456666-2",
+    "direccion": "Calle norte 32",
+    "telefono": "+56923454353",
+    "tipo_usuario": "arrendatario"
   }
 },
 {
   "model": "arriendoapp.usuario",
   "pk": 5,
   "fields": {
-    "user": 6,
-    "nombres": "Juan",
-    "apellidos": "Perez",
-    "rut": "15676777-5",
-    "direccion": "Calle en el norte 333",
-    "telefono": "+56944556676",
-    "tipo_usuario": "arrendador"
+    "user": 5,
+    "nombres": "Estela",
+    "apellidos": "Toro",
+    "rut": "15456657-2",
+    "direccion": "calle de Arica 233",
+    "telefono": "+56934545666",
+    "tipo_usuario": "arrendatario"
   }
 },
 {
   "model": "arriendoapp.inmueble",
   "pk": 1,
   "fields": {
-    "nombre": "Departamento en Valparaiso",
-    "descripcion": "Amplio, buen lugar para vivir,  con buena locomoción",
-    "m2_construidos": 78,
-    "m2_totales": 78,
+    "nombre": "Departamento en Las Condes",
+    "descripcion": "Moderno departamento con vista panorámica, cercano a metro y servicios.\r\nM2 construidos: 70 m²\r\nM2 Totales o del terreno: 80 m²\r\nCantidad de estacionamientos: 1\r\nCantidad de Habitaciones: 2\r\nCantidad de baños: 2\r\nDirección: Av. Apoquindo 1234",
+    "m2_construidos": 70,
+    "m2_totales": 80,
     "estacionamientos": 1,
-    "habitaciones": 3,
+    "habitaciones": 2,
     "banos": 2,
-    "direccion": "Pasaje  2 de valparaiso 12",
-    "region": 6,
-    "comuna": 45,
+    "direccion": "Av. Apoquindo 1234",
+    "region": 16,
+    "comuna": 307,
     "tipo_inmueble": 2,
-    "precio_arriendo": 450000,
-    "arrendador": 3
+    "precio_arriendo": 650000,
+    "arrendador": 1
   }
 },
 {
   "model": "arriendoapp.inmueble",
   "pk": 2,
   "fields": {
-    "nombre": "Casa en Providencia",
-    "descripcion": "Cercano a varios lugares  de entretención y servicios",
-    "m2_construidos": 80,
-    "m2_totales": 100,
-    "estacionamientos": 1,
-    "habitaciones": 4,
+    "nombre": "Casa en Cerro Alegre",
+    "descripcion": "Casa patrimonial con jardín, vista al mar y acceso a transporte público.\r\nM2 construidos: 120 m²\r\nM2 Totales o del terreno: 150 m²\r\nCantidad de estacionamientos: 2\r\nCantidad de Habitaciones: 3\r\nCantidad de baños: 2\r\nDirección: Calle Almirante Montt 456\r\nPrecio mensual de arriendo: 800.000 CLP",
+    "m2_construidos": 120,
+    "m2_totales": 150,
+    "estacionamientos": 2,
+    "habitaciones": 3,
     "banos": 2,
-    "direccion": "Calle de providencia",
-    "region": 16,
-    "comuna": 316,
+    "direccion": "Calle Almirante Montt 456",
+    "region": 6,
+    "comuna": 45,
     "tipo_inmueble": 1,
-    "precio_arriendo": 450000,
-    "arrendador": 3
+    "precio_arriendo": 800000,
+    "arrendador": 1
   }
 },
 {
   "model": "arriendoapp.inmueble",
   "pk": 3,
   "fields": {
-    "nombre": "Parcela en La Serena",
-    "descripcion": "Amplia parcela cerca de la carretera con acceso a servicio de luz y agua potable con 3 habitaciones y dos baños",
-    "m2_construidos": 400,
-    "m2_totales": 5000,
-    "estacionamientos": 5,
-    "habitaciones": 6,
-    "banos": 3,
-    "direccion": "Parcela lote numero 2",
-    "region": 5,
-    "comuna": 30,
-    "tipo_inmueble": 3,
-    "precio_arriendo": 700000,
-    "arrendador": 4
+    "nombre": "Departamento en San Pedro de la Paz",
+    "descripcion": "Departamento nuevo con acceso a piscina y áreas comunes.\r\nM2 construidos: 60 m²\r\nM2 Totales o del terreno: 70 m²\r\nCantidad de estacionamientos: 1\r\nCantidad de Habitaciones: 2\r\nCantidad de baños: 1\r\nDirección: Av. Costanera 789\r\nPrecio mensual de arriendo: 450.000 CLP",
+    "m2_construidos": 60,
+    "m2_totales": 70,
+    "estacionamientos": 1,
+    "habitaciones": 2,
+    "banos": 1,
+    "direccion": "Av. Costanera 789",
+    "region": 10,
+    "comuna": 174,
+    "tipo_inmueble": 2,
+    "precio_arriendo": 450000,
+    "arrendador": 1
   }
 },
 {
   "model": "arriendoapp.inmueble",
   "pk": 4,
   "fields": {
-    "nombre": "Departamento en Temuco",
-    "descripcion": "Cercano al hospital y centro de Temuco con gran servicio de locomoción local.",
-    "m2_construidos": 120,
-    "m2_totales": 300,
+    "nombre": "Parcela en la Ruta 5",
+    "descripcion": "Parcela de agrado con árboles frutales y acceso a agua potable.\r\nM2 construidos: 400 m² (\r\nM2 Totales o del terreno: 5.000 m²\r\nDirección: Km 10 Ruta 5\r\nComuna: Temuco\r\nTipo de inmueble: Parcela\r\nPrecio mensual de arriendo: 300.000 CLP",
+    "m2_construidos": 400,
+    "m2_totales": 5000,
+    "estacionamientos": 3,
+    "habitaciones": 5,
+    "banos": 2,
+    "direccion": "Km 10 Ruta 5",
+    "region": 11,
+    "comuna": 200,
+    "tipo_inmueble": 3,
+    "precio_arriendo": 550000,
+    "arrendador": 1
+  }
+},
+{
+  "model": "arriendoapp.inmueble",
+  "pk": 5,
+  "fields": {
+    "nombre": "Departamento en Sector Norte",
+    "descripcion": "Amplio departamento con vista al mar, cercano a colegios y supermercados.\r\nM2 construidos: 85 m²\r\nM2 Totales o del terreno: 90 m²\r\nCantidad de estacionamientos: 1\r\nCantidad de Habitaciones: 3\r\nCantidad de baños: 2\r\nDirección: Av. Argentina 2345\r\nPrecio mensual de arriendo: 750.000 CLP",
+    "m2_construidos": 85,
+    "m2_totales": 90,
     "estacionamientos": 1,
     "habitaciones": 3,
     "banos": 2,
-    "direccion": "Prieto Norte 345",
-    "region": 11,
-    "comuna": 200,
+    "direccion": "Av. Argentina 2345",
+    "region": 3,
+    "comuna": 12,
     "tipo_inmueble": 2,
-    "precio_arriendo": 410000,
-    "arrendador": 5
+    "precio_arriendo": 750000,
+    "arrendador": 2
+  }
+},
+{
+  "model": "arriendoapp.inmueble",
+  "pk": 6,
+  "fields": {
+    "nombre": "Casa en La Serena Centro",
+    "descripcion": "Casa con patio grande, ideal para familias, a pasos de la playa.\r\nM2 construidos: 100 m²\r\nM2 Totales o del terreno: 200 m²\r\nCantidad de estacionamientos: 2\r\nCantidad de Habitaciones: 4\r\nCantidad de baños: 2\r\nDirección: Calle Los Cactus 567\r\nPrecio mensual de arriendo: 900.000 CLP",
+    "m2_construidos": 100,
+    "m2_totales": 200,
+    "estacionamientos": 2,
+    "habitaciones": 4,
+    "banos": 2,
+    "direccion": "Calle Los Cactus 567",
+    "region": 5,
+    "comuna": 30,
+    "tipo_inmueble": 1,
+    "precio_arriendo": 900000,
+    "arrendador": 2
+  }
+},
+{
+  "model": "arriendoapp.solicitudarriendo",
+  "pk": 1,
+  "fields": {
+    "arrendatario": 6,
+    "inmueble": 1,
+    "fecha_solicitud": "2024-07-23T15:01:44.258Z",
+    "mensaje": "Quiero arrendar este inmueble"
+  }
+},
+{
+  "model": "arriendoapp.solicitudarriendo",
+  "pk": 2,
+  "fields": {
+    "arrendatario": 5,
+    "inmueble": 6,
+    "fecha_solicitud": "2024-07-23T15:16:25.393Z",
+    "mensaje": "buenos dias me interesa arrendar"
   }
 }
 ]
