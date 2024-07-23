@@ -92,12 +92,11 @@ def agregar_inmueble(request):
             inmueble.arrendador = usuario
             inmueble.save()
             
-            # Cambiar el tipo de usuario a 'arrendador' si no lo era ya
             if usuario.tipo_usuario == 'arrendatario':
                 usuario.tipo_usuario = 'arrendador'
                 usuario.save()
             elif usuario.tipo_usuario == 'ambos':
-                pass  # Ya es ambos, no necesita cambiar
+                pass  # Ya es ambos, no necesita cambiar (no hace nada)
             
             messages.success(request, 'Inmueble agregado exitosamente.')
             return redirect('perfil')
