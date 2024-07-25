@@ -6,8 +6,7 @@
 }
 
 body {
-    font-family: "Raleway", sans-serif;
-    opacity: 0.95;
+    font-family: 'Roboto', sans-serif;
     background: url("/static/imagenes/fondo.jpg") center/cover no-repeat fixed;
     color: #333;
     line-height: 1.6;
@@ -20,7 +19,7 @@ body {
 
 .site-title {
     font-size: 3.5rem;
-    color: #35a9b6;
+    color: #007bff;
     margin-bottom: 0.5rem;
 }
 
@@ -184,11 +183,15 @@ select:focus {
     background-color: #f7fcfd;
     border: 3px solid #2d8d45;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden;
+}
 
+.inmueble-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .inmueble-card:hover {
@@ -251,6 +254,13 @@ select:focus {
 .list-group-item i {
     margin-right: 10px;
     color: #13163a;
+}
+
+.btn {
+    background-color: #35a9b6;
+    border: none;
+    color: white;
+    transition: background-color 0.3s;
 }
 
 .btn-primary {
